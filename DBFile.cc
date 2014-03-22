@@ -169,17 +169,15 @@ void DBFile::Add (Record &rec) {
 
   currFile.AddPage(&currPage,currPageIndex);
 }
-
+int ctr = 0;
 int DBFile::GetNext (Record &fetchme)
 {
 //  cout<< " current page index :" << currPageIndex << endl;
 //  cout<< " current page length :" << currFile.GetLength() << endl;
 
-	//cout << " Inside DB FIle GetNExt Page" << endl;
 
   if(pageReadInProg==0) {
     // currPageIndex = 460;
-//	  cout << "GetPage 1"<< currPageIndex << endl;
     currFile.GetPage(&currPage, currPageIndex);
     currPageIndex= currPageIndex +1;
     pageReadInProg = 1;

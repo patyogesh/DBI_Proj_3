@@ -35,7 +35,7 @@ int clear_pipe (Pipe &in_pipe, Schema *schema, Function &func, bool print) {
 	cout << " Sum: " << sum << endl;
 	return cnt;
 }
-int pipesz = 100; // buffer sz allowed for each pipe
+int pipesz = 10000; // buffer sz allowed for each pipe
 int buffsz = 100; // pages of memory allowed for operations
 
 SelectFile SF_ps, SF_p, SF_s, SF_o, SF_li, SF_c;
@@ -96,6 +96,7 @@ void q1 () {
 
   cout <<" \n in "<<__FUNCTION__;
 	char *pred_ps = "(ps_supplycost < 1.03)";
+	//char *pred_ps = "(ps_supplycost < 500.0)";
 	init_SF_ps (pred_ps, 100);
 
 	SF_ps.Run (dbf_ps, _ps, cnf_ps, lit_ps);

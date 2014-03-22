@@ -5,8 +5,21 @@
 #include "DBFile.h"
 #include "Record.h"
 #include "Function.h"
+#include <string.h>
+#include <iostream>
+
+typedef struct Thread_aparams {
+  DBFile  *dbFile;  
+  Pipe    *inPipe;
+  Pipe    *outPipe;
+  CNF     *cnf;
+  Record  *lit;
+}tParams_t;
 
 class RelationalOp {
+  protected:
+  int          runlen;
+  tParams_t    *t_in_params;
 	public:
 	// blocks the caller until the particular relational operator 
 	// has run to completion
@@ -19,8 +32,8 @@ class RelationalOp {
 class SelectFile : public RelationalOp { 
 
 	private:
-	//pthread_t thread;
-	// Record *buffer;
+	pthread_t   thread;
+	Record *buffer;
 
 	public:
 
