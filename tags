@@ -1,0 +1,971 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AND	y.tab.c	83;"	d	file:
+AND	y.tab.h	2;"	d
+Add	DBFile.cc	/^void DBFile::Add (Record &rec) {$/;"	f	class:DBFile
+AddLitToFile	Comparison.cc	/^void AddLitToFile (int &numFieldsInLiteral, FILE *outRecFile, FILE *outSchemaFile, char *value, Type myType) {$/;"	f
+AddPage	File.cc	/^void File :: AddPage (Page *addMe, off_t whichPage) {$/;"	f	class:File
+Advance	TwoWayList.cc	/^TwoWayList <Type> :: Advance ()$/;"	f	class:TwoWayList
+AndList	ParseTree.h	/^struct AndList {$/;"	s
+AndList	Parser.y	/^AndList: '(' OrList ')' AND AndList$/;"	l
+Append	File.cc	/^int Page :: Append (Record *addMe) {$/;"	f	class:Page
+Apply	Function.cc	/^Type Function :: Apply (Record &toMe, int &intResult, double &doubleResult) {$/;"	f	class:Function
+ArithOp	Function.h	/^enum ArithOp {PushInt, PushDouble, ToDouble, ToDouble2Down, $/;"	g
+Arithmatic	Function.h	/^struct Arithmatic {$/;"	s
+Attribute	Schema.h	/^struct Attribute {$/;"	s
+BEGIN	lex.yy.c	125;"	d	file:
+BEGIN	lex.yyfunc.c	144;"	d	file:
+BIGQ_H	BigQ.h	2;"	d
+BigQ	BigQ.cc	/^BigQ :: BigQ (Pipe &in, Pipe &out, OrderMaker &sortorder, int runlen) {$/;"	f	class:BigQ
+BigQ	BigQ.h	/^class BigQ {$/;"	c
+CC	Makefile	/^CC = g++ -O2 -Wno-deprecated$/;"	m
+CNF	Comparison.h	/^class CNF {$/;"	c
+COMPARISON_H	Comparison.h	2;"	d
+Close	DBFile.cc	/^int DBFile::Close () {$/;"	f	class:DBFile
+Close	File.cc	/^int File :: Close () {$/;"	f	class:File
+CompOperator	Defs.h	/^enum CompOperator {LessThan, GreaterThan, Equals};$/;"	g
+Compare	ComparisonEngine.cc	/^int ComparisonEngine :: Compare (Record *left, OrderMaker *order_left, Record *right, OrderMaker *order_right) {$/;"	f	class:ComparisonEngine
+Compare	ComparisonEngine.cc	/^int ComparisonEngine :: Compare (Record *left, Record *literal, CNF *myComparison) {$/;"	f	class:ComparisonEngine
+Compare	ComparisonEngine.cc	/^int ComparisonEngine :: Compare (Record *left, Record *right, Record *literal, CNF *myComparison) {$/;"	f	class:ComparisonEngine
+Compare	ComparisonEngine.cc	/^int ComparisonEngine :: Compare(Record *left, Record *right, OrderMaker *orderUs) {$/;"	f	class:ComparisonEngine
+Comparison	Comparison.cc	/^Comparison::Comparison()$/;"	f	class:Comparison
+Comparison	Comparison.cc	/^Comparison::Comparison(const Comparison &copy_me)$/;"	f	class:Comparison
+Comparison	Comparison.h	/^class Comparison {$/;"	c
+ComparisonEngine	ComparisonEngine.h	/^class ComparisonEngine {$/;"	c
+ComparisonOp	ParseTree.h	/^struct ComparisonOp {$/;"	s
+ComposeRecord	Record.cc	/^int Record :: ComposeRecord (Schema *mySchema, const char *src) {$/;"	f	class:Record
+CompoundExp	ParserFunc.y	/^CompoundExp: SimpleExp Op CompoundExp$/;"	l
+Condition	Parser.y	/^Condition: Literal Op Literal $/;"	l
+Consume	Record.cc	/^void Record :: Consume (Record *fromMe) {$/;"	f	class:Record
+Copy	Record.cc	/^void Record :: Copy (Record *copyMe) {$/;"	f	class:Record
+CopyBits	Record.cc	/^void Record :: CopyBits(char *bits, int b_len) {$/;"	f	class:Record
+Create	DBFile.cc	/^int DBFile::Create (char *f_path, fType f_type, void *startup) {$/;"	f	class:DBFile
+Current	TwoWayList.cc	/^TwoWayList <Type> ::  Current (int offset)$/;"	f	class:TwoWayList
+DA	test.cc	/^Attribute DA = {"double", Double};$/;"	v
+DBFILE_H	DBFile.h	2;"	d
+DBFile	DBFile.cc	/^DBFile::DBFile () {$/;"	f	class:DBFile
+DBFile	DBFile.h	/^class DBFile {$/;"	c
+DEFS_H	Defs.h	2;"	d
+DOUBLE	ParseFunc.h	7;"	d
+DOUBLE	ParseTree.h	10;"	d
+DblDivide	Function.h	/^	DblUnaryMinus, DblMinus, DblPlus, DblDivide, DblMultiply};$/;"	e	enum:ArithOp
+DblMinus	Function.h	/^	DblUnaryMinus, DblMinus, DblPlus, DblDivide, DblMultiply};$/;"	e	enum:ArithOp
+DblMultiply	Function.h	/^	DblUnaryMinus, DblMinus, DblPlus, DblDivide, DblMultiply};$/;"	e	enum:ArithOp
+DblPlus	Function.h	/^	DblUnaryMinus, DblMinus, DblPlus, DblDivide, DblMultiply};$/;"	e	enum:ArithOp
+DblUnaryMinus	Function.h	/^	DblUnaryMinus, DblMinus, DblPlus, DblDivide, DblMultiply};$/;"	e	enum:ArithOp
+Double	Defs.h	/^enum Type {Int, Double, String};$/;"	e	enum:Type
+DuplicateRemoval	RelOp.h	/^class DuplicateRemoval : public RelationalOp {$/;"	c
+ECHO	lex.yy.c	603;"	d	file:
+ECHO	lex.yyfunc.c	613;"	d	file:
+EOB_ACT_CONTINUE_SCAN	lex.yy.c	168;"	d	file:
+EOB_ACT_CONTINUE_SCAN	lex.yyfunc.c	187;"	d	file:
+EOB_ACT_END_OF_FILE	lex.yy.c	169;"	d	file:
+EOB_ACT_END_OF_FILE	lex.yyfunc.c	188;"	d	file:
+EOB_ACT_LAST_MATCH	lex.yy.c	170;"	d	file:
+EOB_ACT_LAST_MATCH	lex.yyfunc.c	189;"	d	file:
+EQUALS	ParseTree.h	7;"	d
+EmptyItOut	File.cc	/^void Page :: EmptyItOut () {$/;"	f	class:Page
+Equals	Defs.h	/^enum CompOperator {LessThan, GreaterThan, Equals};$/;"	e	enum:CompOperator
+FILE_H	File.h	2;"	d
+FLEXINT_H	lex.yy.c	29;"	d	file:
+FLEXINT_H	lex.yyfunc.c	48;"	d	file:
+FLEX_BETA	lex.yy.c	13;"	d	file:
+FLEX_BETA	lex.yyfunc.c	32;"	d	file:
+FLEX_SCANNER	lex.yy.c	8;"	d	file:
+FLEX_SCANNER	lex.yyfunc.c	27;"	d	file:
+FUNCTION_H	Function.h	2;"	d
+File	File.cc	/^File :: File () {$/;"	f	class:File
+File	File.h	/^class File {$/;"	c
+Find	Schema.cc	/^int Schema :: Find (char *attName) {$/;"	f	class:Schema
+FindType	Schema.cc	/^Type Schema :: FindType (char *attName) {$/;"	f	class:Schema
+Float	y.tab.c	86;"	d	file:
+Float	y.tab.h	5;"	d
+Float	yyfunc.tab.c	162;"	d	file:
+Float	yyfunc.tab.h	2;"	d
+FromBinary	File.cc	/^void Page :: FromBinary (char *bits) {$/;"	f	class:Page
+FuncOperand	ParseFunc.h	/^struct FuncOperand {$/;"	s
+FuncOperand	ParseTree.h	/^struct FuncOperand {$/;"	s
+FuncOperator	ParseFunc.h	/^struct FuncOperator {$/;"	s
+FuncOperator	ParseTree.h	/^struct FuncOperator {$/;"	s
+Function	Function.cc	/^Function :: Function () {$/;"	f	class:Function
+Function	Function.h	/^class Function {$/;"	c
+GREATER_THAN	ParseTree.h	6;"	d
+GetAtts	Schema.cc	/^Attribute *Schema :: GetAtts () {$/;"	f	class:Schema
+GetBits	Record.cc	/^char* Record :: GetBits (void) {$/;"	f	class:Record
+GetFirst	File.cc	/^int Page :: GetFirst (Record *firstOne) {$/;"	f	class:Page
+GetLength	File.cc	/^off_t File :: GetLength () {$/;"	f	class:File
+GetNext	DBFile.cc	/^int DBFile::GetNext (Record &fetchme) {$/;"	f	class:DBFile
+GetNext	DBFile.cc	/^int DBFile::GetNext (Record &fetchme, CNF &cnf, Record &literal) {$/;"	f	class:DBFile
+GetNumAtts	Schema.cc	/^int Schema :: GetNumAtts () {$/;"	f	class:Schema
+GetPage	File.cc	/^void File :: GetPage (Page *putItHere, off_t whichPage) {$/;"	f	class:File
+GetSortOrders	Comparison.cc	/^int CNF :: GetSortOrders (OrderMaker &left, OrderMaker &right) {$/;"	f	class:CNF
+GreaterThan	Defs.h	/^enum CompOperator {LessThan, GreaterThan, Equals};$/;"	e	enum:CompOperator
+GroupBy	RelOp.h	/^class GroupBy : public RelationalOp {$/;"	c
+GrowFromParseTree	Comparison.cc	/^void CNF :: GrowFromParseTree (struct AndList *parseTree, Schema *leftSchema, $/;"	f	class:CNF
+GrowFromParseTree	Comparison.cc	/^void CNF :: GrowFromParseTree (struct AndList *parseTree, Schema *mySchema, $/;"	f	class:CNF
+GrowFromParseTree	Function.cc	/^void Function :: GrowFromParseTree (struct FuncOperator *parseTree, Schema &mySchema) {$/;"	f	class:Function
+Header	TwoWayList.h	/^		struct Header {$/;"	s	class:TwoWayList
+IA	test.cc	/^Attribute IA = {"int", Int};$/;"	v
+INITIAL	lex.yy.c	511;"	d	file:
+INITIAL	lex.yyfunc.c	521;"	d	file:
+INT	ParseFunc.h	11;"	d
+INT	ParseTree.h	11;"	d
+INT16_MAX	lex.yy.c	71;"	d	file:
+INT16_MAX	lex.yyfunc.c	90;"	d	file:
+INT16_MIN	lex.yy.c	62;"	d	file:
+INT16_MIN	lex.yyfunc.c	81;"	d	file:
+INT32_MAX	lex.yy.c	74;"	d	file:
+INT32_MAX	lex.yyfunc.c	93;"	d	file:
+INT32_MIN	lex.yy.c	65;"	d	file:
+INT32_MIN	lex.yyfunc.c	84;"	d	file:
+INT8_MAX	lex.yy.c	68;"	d	file:
+INT8_MAX	lex.yyfunc.c	87;"	d	file:
+INT8_MIN	lex.yy.c	59;"	d	file:
+INT8_MIN	lex.yyfunc.c	78;"	d	file:
+Insert	Pipe.cc	/^void Pipe :: Insert (Record *insertMe) {$/;"	f	class:Pipe
+Insert	TwoWayList.cc	/^TwoWayList <Type> :: Insert (Type *Item)$/;"	f	class:TwoWayList
+Int	Defs.h	/^enum Type {Int, Double, String};$/;"	e	enum:Type
+Int	y.tab.c	87;"	d	file:
+Int	y.tab.h	6;"	d
+Int	yyfunc.tab.c	163;"	d	file:
+Int	yyfunc.tab.h	3;"	d
+IntDivide	Function.h	/^	IntUnaryMinus, IntMinus, IntPlus, IntDivide, IntMultiply,$/;"	e	enum:ArithOp
+IntMinus	Function.h	/^	IntUnaryMinus, IntMinus, IntPlus, IntDivide, IntMultiply,$/;"	e	enum:ArithOp
+IntMultiply	Function.h	/^	IntUnaryMinus, IntMinus, IntPlus, IntDivide, IntMultiply,$/;"	e	enum:ArithOp
+IntPlus	Function.h	/^	IntUnaryMinus, IntMinus, IntPlus, IntDivide, IntMultiply,$/;"	e	enum:ArithOp
+IntUnaryMinus	Function.h	/^	IntUnaryMinus, IntMinus, IntPlus, IntDivide, IntMultiply,$/;"	e	enum:ArithOp
+Join	RelOp.h	/^class Join : public RelationalOp { $/;"	c
+LESS_THAN	ParseTree.h	5;"	d
+Left	Defs.h	/^enum Target {Left, Right, Literal};$/;"	e	enum:Target
+LeftLength	TwoWayList.cc	/^TwoWayList <Type> :: LeftLength ()$/;"	f	class:TwoWayList
+LessThan	Defs.h	/^enum CompOperator {LessThan, GreaterThan, Equals};$/;"	e	enum:CompOperator
+Literal	Defs.h	/^enum Target {Left, Right, Literal};$/;"	e	enum:Target
+Literal	Parser.y	/^Literal : String $/;"	l
+Load	DBFile.cc	/^void DBFile::Load (Schema &f_schema, char *loadpath) {$/;"	f	class:DBFile
+MAX_ANDS	Defs.h	5;"	d
+MAX_DEPTH	Function.h	6;"	d
+MAX_ORS	Defs.h	6;"	d
+MergeRecords	Record.cc	/^void Record :: MergeRecords (Record *left, Record *right, int numAttsLeft, int numAttsRight, int *attsToKeep, int numAttsToKeep, int startOfRight) {$/;"	f	class:Record
+MoveFirst	DBFile.cc	/^void DBFile::MoveFirst () {$/;"	f	class:DBFile
+MoveToFinish	TwoWayList.cc	/^TwoWayList <Type> :: MoveToFinish ()$/;"	f	class:TwoWayList
+MoveToStart	TwoWayList.cc	/^TwoWayList <Type> :: MoveToStart ()$/;"	f	class:TwoWayList
+NAME	ParseFunc.h	15;"	d
+NAME	ParseTree.h	13;"	d
+Name	y.tab.c	84;"	d	file:
+Name	y.tab.h	3;"	d
+Name	yyfunc.tab.c	161;"	d	file:
+Name	yyfunc.tab.h	1;"	d
+Node	TwoWayList.h	/^			Node () : data (0), next (0), previous (0) {}$/;"	f	struct:TwoWayList::Node
+Node	TwoWayList.h	/^		struct Node {$/;"	s	class:TwoWayList
+OR	y.tab.c	82;"	d	file:
+OR	y.tab.h	1;"	d
+Op	Parser.y	/^Op: '<' $/;"	l
+Op	ParserFunc.y	/^Op: '-'$/;"	l
+Open	DBFile.cc	/^int DBFile::Open (char *f_path) {$/;"	f	class:DBFile
+Open	File.cc	/^void File :: Open (int fileLen, char *fName) {$/;"	f	class:File
+Operand	ParseTree.h	/^struct Operand {$/;"	s
+OrList	ParseTree.h	/^struct OrList {$/;"	s
+OrList	Parser.y	/^OrList: Condition OR OrList$/;"	l
+OrderMaker	Comparison.cc	/^OrderMaker :: OrderMaker() {$/;"	f	class:OrderMaker
+OrderMaker	Comparison.cc	/^OrderMaker :: OrderMaker(Schema *schema) {$/;"	f	class:OrderMaker
+OrderMaker	Comparison.h	/^class OrderMaker {$/;"	c
+PAGE_SIZE	Defs.h	8;"	d
+PARSE_TREE_H	ParseTree.h	2;"	d
+PIPE_H	Pipe.h	2;"	d
+Page	File.cc	/^Page :: Page () {$/;"	f	class:Page
+Page	File.h	/^class Page {$/;"	c
+ParseFunc	ParseFunc.h	3;"	d
+Pipe	Pipe.cc	/^Pipe :: Pipe (int bufferSize) {$/;"	f	class:Pipe
+Pipe	Pipe.h	/^class Pipe {$/;"	c
+Print	Comparison.cc	/^void CNF :: Print () {$/;"	f	class:CNF
+Print	Comparison.cc	/^void Comparison :: Print () {$/;"	f	class:Comparison
+Print	Comparison.cc	/^void OrderMaker :: Print () {$/;"	f	class:OrderMaker
+Print	Function.cc	/^void Function :: Print () {$/;"	f	class:Function
+Print	Record.cc	/^void Record :: Print (Schema *mySchema) {$/;"	f	class:Record
+Project	Record.cc	/^void Record :: Project (int *attsToKeep, int numAttsToKeep, int numAttsNow) {$/;"	f	class:Record
+Project	RelOp.h	/^class Project : public RelationalOp { $/;"	c
+PushDouble	Function.h	/^enum ArithOp {PushInt, PushDouble, ToDouble, ToDouble2Down, $/;"	e	enum:ArithOp
+PushInt	Function.h	/^enum ArithOp {PushInt, PushDouble, ToDouble, ToDouble2Down, $/;"	e	enum:ArithOp
+RECORD_H	Record.h	2;"	d
+REJECT	lex.yy.c	469;"	d	file:
+REJECT	lex.yyfunc.c	480;"	d	file:
+REL_OP_H	RelOp.h	2;"	d
+Record	Record.cc	/^Record :: Record () {$/;"	f	class:Record
+Record	Record.h	/^class Record {$/;"	c
+RecursivelyBuild	Function.cc	/^Type Function :: RecursivelyBuild (struct FuncOperator *parseTree, Schema &mySchema) {$/;"	f	class:Function
+RelationalOp	RelOp.h	/^class RelationalOp {$/;"	c
+Remove	Pipe.cc	/^int Pipe :: Remove (Record *removeMe) {$/;"	f	class:Pipe
+Remove	TwoWayList.cc	/^TwoWayList <Type> :: Remove (Type *Item)$/;"	f	class:TwoWayList
+Retreat	TwoWayList.cc	/^TwoWayList <Type> :: Retreat ()$/;"	f	class:TwoWayList
+Right	Defs.h	/^enum Target {Left, Right, Literal};$/;"	e	enum:Target
+RightLength	TwoWayList.cc	/^TwoWayList <Type> :: RightLength ()$/;"	f	class:TwoWayList
+Run	ComparisonEngine.cc	/^int ComparisonEngine :: Run (Record *left, Record *literal, Comparison *c) {$/;"	f	class:ComparisonEngine
+Run	ComparisonEngine.cc	/^int ComparisonEngine :: Run (Record *left, Record *right, Record *literal, Comparison *c) {$/;"	f	class:ComparisonEngine
+Run	RelOp.cc	/^void SelectFile::Run (DBFile &inFile, Pipe &outPipe, CNF &selOp, Record &literal) {$/;"	f	class:SelectFile
+Run	RelOp.h	/^	void Run (Pipe &inPipe, FILE *outFile, Schema &mySchema) { }$/;"	f	class:WriteOut
+Run	RelOp.h	/^	void Run (Pipe &inPipe, Pipe &outPipe, CNF &selOp, Record &literal) { }$/;"	f	class:SelectPipe
+Run	RelOp.h	/^	void Run (Pipe &inPipe, Pipe &outPipe, Function &computeMe) { }$/;"	f	class:Sum
+Run	RelOp.h	/^	void Run (Pipe &inPipe, Pipe &outPipe, OrderMaker &groupAtts, Function &computeMe) { }$/;"	f	class:GroupBy
+Run	RelOp.h	/^	void Run (Pipe &inPipe, Pipe &outPipe, Schema &mySchema) { }$/;"	f	class:DuplicateRemoval
+Run	RelOp.h	/^	void Run (Pipe &inPipe, Pipe &outPipe, int *keepMe, int numAttsInput, int numAttsOutput) { }$/;"	f	class:Project
+Run	RelOp.h	/^	void Run (Pipe &inPipeL, Pipe &inPipeR, Pipe &outPipe, CNF &selOp, Record &literal) { }$/;"	f	class:Join
+SA	test.cc	/^Attribute SA = {"string", String};$/;"	v
+SCHEMA_H	Schema.h	3;"	d
+SF_c	test.cc	/^SelectFile SF_ps, SF_p, SF_s, SF_o, SF_li, SF_c;$/;"	v
+SF_li	test.cc	/^SelectFile SF_ps, SF_p, SF_s, SF_o, SF_li, SF_c;$/;"	v
+SF_o	test.cc	/^SelectFile SF_ps, SF_p, SF_s, SF_o, SF_li, SF_c;$/;"	v
+SF_p	test.cc	/^SelectFile SF_ps, SF_p, SF_s, SF_o, SF_li, SF_c;$/;"	v
+SF_ps	test.cc	/^SelectFile SF_ps, SF_p, SF_s, SF_o, SF_li, SF_c;$/;"	v
+SF_s	test.cc	/^SelectFile SF_ps, SF_p, SF_s, SF_o, SF_li, SF_c;$/;"	v
+STRING	ParseTree.h	12;"	d
+Schema	Schema.cc	/^Schema :: Schema (char *fName, char *relName) {$/;"	f	class:Schema
+Schema	Schema.cc	/^Schema :: Schema (char *fpath, int num_atts, Attribute *atts) {$/;"	f	class:Schema
+Schema	Schema.h	/^class Schema {$/;"	c
+SelectFile	RelOp.h	/^class SelectFile : public RelationalOp { $/;"	c
+SelectPipe	RelOp.h	/^class SelectPipe : public RelationalOp {$/;"	c
+SetBits	Record.cc	/^void Record :: SetBits (char *bits) {$/;"	f	class:Record
+ShutDown	Pipe.cc	/^void Pipe :: ShutDown () {$/;"	f	class:Pipe
+SimpleExp	ParserFunc.y	/^SimpleExp: $/;"	l
+String	Defs.h	/^enum Type {Int, Double, String};$/;"	e	enum:Type
+String	y.tab.c	85;"	d	file:
+String	y.tab.h	4;"	d
+SuckNextRecord	Record.cc	/^int Record :: SuckNextRecord (Schema *mySchema, FILE *textFile) {$/;"	f	class:Record
+Sum	RelOp.h	/^class Sum : public RelationalOp {$/;"	c
+SwapLefts	TwoWayList.cc	/^TwoWayList <Type> :: SwapLefts (TwoWayList & List)$/;"	f	class:TwoWayList
+SwapRights	TwoWayList.cc	/^TwoWayList <Type> :: SwapRights (TwoWayList & List)$/;"	f	class:TwoWayList
+TEST_H	test.h	2;"	d
+Target	Defs.h	/^enum Target {Left, Right, Literal};$/;"	g
+ToBinary	File.cc	/^void Page :: ToBinary (char *bits) {$/;"	f	class:Page
+ToDouble	Function.h	/^enum ArithOp {PushInt, PushDouble, ToDouble, ToDouble2Down, $/;"	e	enum:ArithOp
+ToDouble2Down	Function.h	/^enum ArithOp {PushInt, PushDouble, ToDouble, ToDouble2Down, $/;"	e	enum:ArithOp
+TwoWayList	TwoWayList.cc	/^TwoWayList <Type> :: TwoWayList ()$/;"	f	class:TwoWayList
+TwoWayList	TwoWayList.cc	/^TwoWayList <Type> :: TwoWayList (TwoWayList &me) {$/;"	f	class:TwoWayList
+TwoWayList	TwoWayList.h	/^class TwoWayList {$/;"	c
+Type	Defs.h	/^enum Type {Int, Double, String};$/;"	g
+UINT16_MAX	lex.yy.c	80;"	d	file:
+UINT16_MAX	lex.yyfunc.c	99;"	d	file:
+UINT32_MAX	lex.yy.c	83;"	d	file:
+UINT32_MAX	lex.yyfunc.c	102;"	d	file:
+UINT8_MAX	lex.yy.c	77;"	d	file:
+UINT8_MAX	lex.yyfunc.c	96;"	d	file:
+Use_n_Pages	RelOp.cc	/^void SelectFile::Use_n_Pages (int runlen) {$/;"	f	class:SelectFile
+Use_n_Pages	RelOp.h	/^	void Use_n_Pages (int n) { }$/;"	f	class:DuplicateRemoval
+Use_n_Pages	RelOp.h	/^	void Use_n_Pages (int n) { }$/;"	f	class:GroupBy
+Use_n_Pages	RelOp.h	/^	void Use_n_Pages (int n) { }$/;"	f	class:Join
+Use_n_Pages	RelOp.h	/^	void Use_n_Pages (int n) { }$/;"	f	class:Project
+Use_n_Pages	RelOp.h	/^	void Use_n_Pages (int n) { }$/;"	f	class:SelectPipe
+Use_n_Pages	RelOp.h	/^	void Use_n_Pages (int n) { }$/;"	f	class:Sum
+Use_n_Pages	RelOp.h	/^	void Use_n_Pages (int n) { }$/;"	f	class:WriteOut
+WaitUntilDone	RelOp.cc	/^void SelectFile::WaitUntilDone () {$/;"	f	class:SelectFile
+WaitUntilDone	RelOp.h	/^	void WaitUntilDone () { }$/;"	f	class:DuplicateRemoval
+WaitUntilDone	RelOp.h	/^	void WaitUntilDone () { }$/;"	f	class:GroupBy
+WaitUntilDone	RelOp.h	/^	void WaitUntilDone () { }$/;"	f	class:Join
+WaitUntilDone	RelOp.h	/^	void WaitUntilDone () { }$/;"	f	class:Project
+WaitUntilDone	RelOp.h	/^	void WaitUntilDone () { }$/;"	f	class:SelectPipe
+WaitUntilDone	RelOp.h	/^	void WaitUntilDone () { }$/;"	f	class:Sum
+WaitUntilDone	RelOp.h	/^	void WaitUntilDone () { }$/;"	f	class:WriteOut
+WriteOut	RelOp.h	/^class WriteOut : public RelationalOp {$/;"	c
+YYABORT	y.tab.c	290;"	d	file:
+YYABORT	yyfunc.tab.c	365;"	d	file:
+YYACCEPT	y.tab.c	292;"	d	file:
+YYACCEPT	yyfunc.tab.c	367;"	d	file:
+YYBYACC	y.tab.c	5;"	d	file:
+YYBYACC	yyfunc.tab.c	5;"	d	file:
+YYDEBUG	y.tab.c	166;"	d	file:
+YYDEBUG	yyfunc.tab.c	242;"	d	file:
+YYEMPTY	y.tab.c	10;"	d	file:
+YYEMPTY	yyfunc.tab.c	10;"	d	file:
+YYERRCODE	y.tab.c	88;"	d	file:
+YYERRCODE	yyfunc.tab.c	164;"	d	file:
+YYERROR	y.tab.c	293;"	d	file:
+YYERROR	yyfunc.tab.c	368;"	d	file:
+YYERROR_CALL	y.tab.c	77;"	d	file:
+YYERROR_CALL	yyfunc.tab.c	156;"	d	file:
+YYERROR_DECL	y.tab.c	74;"	d	file:
+YYERROR_DECL	yyfunc.tab.c	153;"	d	file:
+YYFINAL	y.tab.c	164;"	d	file:
+YYFINAL	yyfunc.tab.c	240;"	d	file:
+YYINITSTACKSIZE	y.tab.c	221;"	d	file:
+YYINITSTACKSIZE	yyfunc.tab.c	296;"	d	file:
+YYLEX	y.tab.c	66;"	d	file:
+YYLEX	y.tab.c	69;"	d	file:
+YYLEX	yyfunc.tab.c	145;"	d	file:
+YYLEX	yyfunc.tab.c	148;"	d	file:
+YYLEX_DECL	y.tab.c	65;"	d	file:
+YYLEX_DECL	y.tab.c	68;"	d	file:
+YYLEX_DECL	yyfunc.tab.c	144;"	d	file:
+YYLEX_DECL	yyfunc.tab.c	147;"	d	file:
+YYMAJOR	y.tab.c	6;"	d	file:
+YYMAJOR	yyfunc.tab.c	6;"	d	file:
+YYMAXDEPTH	y.tab.c	210;"	d	file:
+YYMAXDEPTH	y.tab.c	211;"	d	file:
+YYMAXDEPTH	y.tab.c	217;"	d	file:
+YYMAXDEPTH	yyfunc.tab.c	285;"	d	file:
+YYMAXDEPTH	yyfunc.tab.c	286;"	d	file:
+YYMAXDEPTH	yyfunc.tab.c	292;"	d	file:
+YYMAXTOKEN	y.tab.c	168;"	d	file:
+YYMAXTOKEN	yyfunc.tab.c	244;"	d	file:
+YYMINOR	y.tab.c	7;"	d	file:
+YYMINOR	yyfunc.tab.c	7;"	d	file:
+YYPARSE_DECL	y.tab.c	/^YYPARSE_DECL()$/;"	f
+YYPARSE_DECL	y.tab.c	55;"	d	file:
+YYPARSE_DECL	y.tab.c	57;"	d	file:
+YYPARSE_DECL	y.tab.c	60;"	d	file:
+YYPARSE_DECL	yyfunc.tab.c	/^YYPARSE_DECL()$/;"	f
+YYPARSE_DECL	yyfunc.tab.c	134;"	d	file:
+YYPARSE_DECL	yyfunc.tab.c	136;"	d	file:
+YYPARSE_DECL	yyfunc.tab.c	139;"	d	file:
+YYPATCH	y.tab.c	8;"	d	file:
+YYPATCH	yyfunc.tab.c	8;"	d	file:
+YYPREFIX	y.tab.c	15;"	d	file:
+YYPREFIX	yyfunc.tab.c	95;"	d	file:
+YYPURE	y.tab.c	17;"	d	file:
+YYPURE	yyfunc.tab.c	97;"	d	file:
+YYRECOVERING	y.tab.c	13;"	d	file:
+YYRECOVERING	yyfunc.tab.c	13;"	d	file:
+YYREJECT	y.tab.c	291;"	d	file:
+YYREJECT	yyfunc.tab.c	366;"	d	file:
+YYSTACKDATA	y.tab.c	/^} YYSTACKDATA;$/;"	t	typeref:struct:__anon6	file:
+YYSTACKDATA	yyfunc.tab.c	/^} YYSTACKDATA;$/;"	t	typeref:struct:__anon8	file:
+YYSTACKSIZE	y.tab.c	214;"	d	file:
+YYSTACKSIZE	y.tab.c	216;"	d	file:
+YYSTACKSIZE	yyfunc.tab.c	289;"	d	file:
+YYSTACKSIZE	yyfunc.tab.c	291;"	d	file:
+YYSTATE	lex.yy.c	132;"	d	file:
+YYSTATE	lex.yyfunc.c	151;"	d	file:
+YYSTYPE	y.tab.c	/^} YYSTYPE;$/;"	t	typeref:union:__anon5	file:
+YYSTYPE	y.tab.h	/^} YYSTYPE;$/;"	t	typeref:union:__anon3
+YYSTYPE	yyfunc.tab.c	/^} YYSTYPE;$/;"	t	typeref:union:__anon7	file:
+YYSTYPE	yyfunc.tab.h	/^} YYSTYPE;$/;"	t	typeref:union:__anon2
+YYSTYPE_IS_DECLARED	y.tab.c	36;"	d	file:
+YYSTYPE_IS_DECLARED	y.tab.c	37;"	d	file:
+YYSTYPE_IS_DECLARED	y.tab.c	40;"	d	file:
+YYSTYPE_IS_DECLARED	y.tab.h	12;"	d
+YYSTYPE_IS_DECLARED	y.tab.h	8;"	d
+YYSTYPE_IS_DECLARED	y.tab.h	9;"	d
+YYSTYPE_IS_DECLARED	yyfunc.tab.c	116;"	d	file:
+YYSTYPE_IS_DECLARED	yyfunc.tab.c	117;"	d	file:
+YYSTYPE_IS_DECLARED	yyfunc.tab.c	120;"	d	file:
+YYSTYPE_IS_DECLARED	yyfunc.tab.h	5;"	d
+YYSTYPE_IS_DECLARED	yyfunc.tab.h	6;"	d
+YYSTYPE_IS_DECLARED	yyfunc.tab.h	9;"	d
+YYTABLESIZE	y.tab.c	115;"	d	file:
+YYTABLESIZE	yyfunc.tab.c	191;"	d	file:
+YYTABLES_NAME	lex.yy.c	1874;"	d	file:
+YYTABLES_NAME	lex.yyfunc.c	1860;"	d	file:
+YY_AT_BOL	lex.yy.c	339;"	d	file:
+YY_AT_BOL	lex.yyfunc.c	358;"	d	file:
+YY_BREAK	lex.yy.c	682;"	d	file:
+YY_BREAK	lex.yyfunc.c	692;"	d	file:
+YY_BUFFER_EOF_PENDING	lex.yy.c	255;"	d	file:
+YY_BUFFER_EOF_PENDING	lex.yyfunc.c	274;"	d	file:
+YY_BUFFER_NEW	lex.yy.c	243;"	d	file:
+YY_BUFFER_NEW	lex.yyfunc.c	262;"	d	file:
+YY_BUFFER_NORMAL	lex.yy.c	244;"	d	file:
+YY_BUFFER_NORMAL	lex.yyfunc.c	263;"	d	file:
+YY_BUFFER_STATE	lex.yy.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	typeref:struct:yy_buffer_state	file:
+YY_BUFFER_STATE	lex.yyfunc.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	typeref:struct:yy_buffer_state	file:
+YY_BUF_SIZE	lex.yy.c	149;"	d	file:
+YY_BUF_SIZE	lex.yy.c	151;"	d	file:
+YY_BUF_SIZE	lex.yyfunc.c	168;"	d	file:
+YY_BUF_SIZE	lex.yyfunc.c	170;"	d	file:
+YY_CHAR	lex.yy.c	/^typedef unsigned char YY_CHAR;$/;"	t	file:
+YY_CHAR	lex.yyfunc.c	/^typedef unsigned char YY_CHAR;$/;"	t	file:
+YY_CURRENT_BUFFER	lex.yy.c	271;"	d	file:
+YY_CURRENT_BUFFER	lex.yyfunc.c	290;"	d	file:
+YY_CURRENT_BUFFER_LVALUE	lex.yy.c	278;"	d	file:
+YY_CURRENT_BUFFER_LVALUE	lex.yyfunc.c	297;"	d	file:
+YY_DECL	lex.yy.c	670;"	d	file:
+YY_DECL	lex.yyfunc.c	680;"	d	file:
+YY_DECL_IS_OURS	lex.yy.c	666;"	d	file:
+YY_DECL_IS_OURS	lex.yyfunc.c	676;"	d	file:
+YY_DO_BEFORE_ACTION	lex.yy.c	364;"	d	file:
+YY_DO_BEFORE_ACTION	lex.yyfunc.c	383;"	d	file:
+YY_END_OF_BUFFER	lex.yy.c	373;"	d	file:
+YY_END_OF_BUFFER	lex.yyfunc.c	391;"	d	file:
+YY_END_OF_BUFFER_CHAR	lex.yy.c	140;"	d	file:
+YY_END_OF_BUFFER_CHAR	lex.yyfunc.c	159;"	d	file:
+YY_EXIT_FAILURE	lex.yy.c	1672;"	d	file:
+YY_EXIT_FAILURE	lex.yyfunc.c	1658;"	d	file:
+YY_EXTRA_TYPE	lex.yy.c	522;"	d	file:
+YY_EXTRA_TYPE	lex.yyfunc.c	532;"	d	file:
+YY_FATAL_ERROR	lex.yy.c	657;"	d	file:
+YY_FATAL_ERROR	lex.yyfunc.c	667;"	d	file:
+YY_FLEX_MAJOR_VERSION	lex.yy.c	9;"	d	file:
+YY_FLEX_MAJOR_VERSION	lex.yyfunc.c	28;"	d	file:
+YY_FLEX_MINOR_VERSION	lex.yy.c	10;"	d	file:
+YY_FLEX_MINOR_VERSION	lex.yyfunc.c	29;"	d	file:
+YY_FLEX_SUBMINOR_VERSION	lex.yy.c	11;"	d	file:
+YY_FLEX_SUBMINOR_VERSION	lex.yyfunc.c	30;"	d	file:
+YY_FLUSH_BUFFER	lex.yy.c	307;"	d	file:
+YY_FLUSH_BUFFER	lex.yyfunc.c	326;"	d	file:
+YY_INPUT	lex.yy.c	610;"	d	file:
+YY_INPUT	lex.yyfunc.c	620;"	d	file:
+YY_INT_ALIGNED	lex.yy.c	4;"	d	file:
+YY_INT_ALIGNED	lex.yyfunc.c	4;"	d	file:
+YY_LESS_LINENO	lex.yy.c	172;"	d	file:
+YY_LESS_LINENO	lex.yyfunc.c	191;"	d	file:
+YY_MORE_ADJ	lex.yy.c	473;"	d	file:
+YY_MORE_ADJ	lex.yyfunc.c	482;"	d	file:
+YY_NEW_FILE	lex.yy.c	138;"	d	file:
+YY_NEW_FILE	lex.yyfunc.c	157;"	d	file:
+YY_NULL	lex.yy.c	112;"	d	file:
+YY_NULL	lex.yyfunc.c	131;"	d	file:
+YY_NUM_RULES	lex.yy.c	372;"	d	file:
+YY_NUM_RULES	lex.yyfunc.c	390;"	d	file:
+YY_READ_BUF_SIZE	lex.yy.c	592;"	d	file:
+YY_READ_BUF_SIZE	lex.yy.c	594;"	d	file:
+YY_READ_BUF_SIZE	lex.yyfunc.c	602;"	d	file:
+YY_READ_BUF_SIZE	lex.yyfunc.c	604;"	d	file:
+YY_RESTORE_YY_MORE_OFFSET	lex.yy.c	474;"	d	file:
+YY_RESTORE_YY_MORE_OFFSET	lex.yyfunc.c	483;"	d	file:
+YY_RULE_SETUP	lex.yy.c	685;"	d	file:
+YY_RULE_SETUP	lex.yyfunc.c	695;"	d	file:
+YY_SC_TO_UI	lex.yy.c	119;"	d	file:
+YY_SC_TO_UI	lex.yyfunc.c	138;"	d	file:
+YY_START	lex.yy.c	131;"	d	file:
+YY_START	lex.yyfunc.c	150;"	d	file:
+YY_START_STACK_INCR	lex.yy.c	652;"	d	file:
+YY_START_STACK_INCR	lex.yyfunc.c	662;"	d	file:
+YY_STATE_BUF_SIZE	lex.yy.c	157;"	d	file:
+YY_STATE_BUF_SIZE	lex.yyfunc.c	176;"	d	file:
+YY_STATE_EOF	lex.yy.c	135;"	d	file:
+YY_STATE_EOF	lex.yyfunc.c	154;"	d	file:
+YY_STRUCT_YY_BUFFER_STATE	lex.yy.c	196;"	d	file:
+YY_STRUCT_YY_BUFFER_STATE	lex.yyfunc.c	215;"	d	file:
+YY_TYPEDEF_YY_BUFFER_STATE	lex.yy.c	160;"	d	file:
+YY_TYPEDEF_YY_BUFFER_STATE	lex.yyfunc.c	179;"	d	file:
+YY_TYPEDEF_YY_SIZE_T	lex.yy.c	191;"	d	file:
+YY_TYPEDEF_YY_SIZE_T	lex.yyfunc.c	210;"	d	file:
+YY_USER_ACTION	lex.yy.c	677;"	d	file:
+YY_USER_ACTION	lex.yyfunc.c	687;"	d	file:
+YY_USE_CONST	lex.yy.c	100;"	d	file:
+YY_USE_CONST	lex.yy.c	93;"	d	file:
+YY_USE_CONST	lex.yyfunc.c	112;"	d	file:
+YY_USE_CONST	lex.yyfunc.c	119;"	d	file:
+_ENGINE	ComparisonEngine.h	2;"	d
+_TWO_WAY_LIST_C	TwoWayList.cc	2;"	d	file:
+_TWO_WAY_LIST_H	TwoWayList.h	2;"	d
+__STDC_LIMIT_MACROS	lex.yy.c	39;"	d	file:
+__STDC_LIMIT_MACROS	lex.yyfunc.c	58;"	d	file:
+actualChars	y.tab.c	/^	char *actualChars;$/;"	m	union:__anon5	file:
+actualChars	y.tab.h	/^	char *actualChars;$/;"	m	union:__anon3
+actualChars	yyfunc.tab.c	/^	char *actualChars;$/;"	m	union:__anon7	file:
+actualChars	yyfunc.tab.h	/^	char *actualChars;$/;"	m	union:__anon2
+attType	Comparison.h	/^	Type attType;$/;"	m	class:Comparison
+att_pair	Schema.h	/^struct att_pair {$/;"	s
+bits	Record.h	/^	char *bits;$/;"	m	class:Record
+buffered	Pipe.h	/^	Record *buffered;$/;"	m	class:Pipe
+buffsz	test.cc	/^int buffsz = 100; \/\/ pages of memory allowed for operations$/;"	v
+c	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+cAtts	test.cc	/^int cAtts = 8;$/;"	v
+catalog_path	test.h	/^char *catalog_path, *dbfile_dir, *tpch_dir = NULL;$/;"	v
+cleanup	test.h	/^void cleanup () {$/;"	f
+clear_pipe	test.cc	/^int clear_pipe (Pipe &in_pipe, Schema *schema, Function &func, bool print) {$/;"	f
+clear_pipe	test.cc	/^int clear_pipe (Pipe &in_pipe, Schema *schema, bool print) {$/;"	f
+close_lexical_parser	lex.yy.c	/^void close_lexical_parser () { yy_delete_buffer (yylex_buf_state); }$/;"	f
+close_lexical_parser_func	lex.yyfunc.c	/^void close_lexical_parser_func () { yyfunc_delete_buffer (yyfunc_buf_state); }$/;"	f
+cnf_c	test.cc	/^CNF cnf_ps, cnf_p, cnf_s, cnf_o, cnf_li, cnf_c;$/;"	v
+cnf_li	test.cc	/^CNF cnf_ps, cnf_p, cnf_s, cnf_o, cnf_li, cnf_c;$/;"	v
+cnf_o	test.cc	/^CNF cnf_ps, cnf_p, cnf_s, cnf_o, cnf_li, cnf_c;$/;"	v
+cnf_p	test.cc	/^CNF cnf_ps, cnf_p, cnf_s, cnf_o, cnf_li, cnf_c;$/;"	v
+cnf_ps	test.cc	/^CNF cnf_ps, cnf_p, cnf_s, cnf_o, cnf_li, cnf_c;$/;"	v
+cnf_s	test.cc	/^CNF cnf_ps, cnf_p, cnf_s, cnf_o, cnf_li, cnf_c;$/;"	v
+code	ParseFunc.h	/^	int code;$/;"	m	struct:FuncOperand
+code	ParseFunc.h	/^	int code;$/;"	m	struct:FuncOperator
+code	ParseTree.h	/^	int code;$/;"	m	struct:ComparisonOp
+code	ParseTree.h	/^	int code;$/;"	m	struct:FuncOperand
+code	ParseTree.h	/^	int code;$/;"	m	struct:FuncOperator
+code	ParseTree.h	/^	int code;$/;"	m	struct:Operand
+consumerVar	Pipe.h	/^	pthread_cond_t consumerVar;$/;"	m	class:Pipe
+curLength	File.h	/^	off_t curLength; \/\/this was private in Chris's version$/;"	m	class:File
+curSizeInBytes	File.h	/^	int curSizeInBytes;$/;"	m	class:Page
+current	TwoWayList.h	/^			Node * current;$/;"	m	struct:TwoWayList::Header
+customer	test.h	/^char *customer = "customer"; $/;"	v
+data	TwoWayList.h	/^			Type *data;$/;"	m	struct:TwoWayList::Node
+dbf_c	test.cc	/^DBFile dbf_ps, dbf_p, dbf_s, dbf_o, dbf_li, dbf_c;$/;"	v
+dbf_li	test.cc	/^DBFile dbf_ps, dbf_p, dbf_s, dbf_o, dbf_li, dbf_c;$/;"	v
+dbf_o	test.cc	/^DBFile dbf_ps, dbf_p, dbf_s, dbf_o, dbf_li, dbf_c;$/;"	v
+dbf_p	test.cc	/^DBFile dbf_ps, dbf_p, dbf_s, dbf_o, dbf_li, dbf_c;$/;"	v
+dbf_ps	test.cc	/^DBFile dbf_ps, dbf_p, dbf_s, dbf_o, dbf_li, dbf_c;$/;"	v
+dbf_s	test.cc	/^DBFile dbf_ps, dbf_p, dbf_s, dbf_o, dbf_li, dbf_c;$/;"	v
+dbfile_dir	test.h	/^char *catalog_path, *dbfile_dir, *tpch_dir = NULL;$/;"	v
+done	Pipe.h	/^	int done;$/;"	m	class:Pipe
+fType	DBFile.h	/^typedef enum {heap, sorted, tree} fType;$/;"	t	typeref:enum:__anon4
+fileName	Schema.h	/^	char *fileName;$/;"	m	class:Schema
+final	y.tab.c	/^	struct AndList *final;	$/;"	v	typeref:struct:AndList
+finalfunc	yyfunc.tab.c	/^	struct FuncOperator *finalfunc;	$/;"	v	typeref:struct:FuncOperator
+first	TwoWayList.h	/^			Node * first;$/;"	m	struct:TwoWayList::Header
+firstSlot	Pipe.h	/^	int firstSlot;$/;"	m	class:Pipe
+flex_int16_t	lex.yy.c	/^typedef int16_t flex_int16_t;$/;"	t	file:
+flex_int16_t	lex.yy.c	/^typedef short int flex_int16_t;$/;"	t	file:
+flex_int16_t	lex.yyfunc.c	/^typedef int16_t flex_int16_t;$/;"	t	file:
+flex_int16_t	lex.yyfunc.c	/^typedef short int flex_int16_t;$/;"	t	file:
+flex_int32_t	lex.yy.c	/^typedef int flex_int32_t;$/;"	t	file:
+flex_int32_t	lex.yy.c	/^typedef int32_t flex_int32_t;$/;"	t	file:
+flex_int32_t	lex.yyfunc.c	/^typedef int flex_int32_t;$/;"	t	file:
+flex_int32_t	lex.yyfunc.c	/^typedef int32_t flex_int32_t;$/;"	t	file:
+flex_int8_t	lex.yy.c	/^typedef int8_t flex_int8_t;$/;"	t	file:
+flex_int8_t	lex.yy.c	/^typedef signed char flex_int8_t;$/;"	t	file:
+flex_int8_t	lex.yyfunc.c	/^typedef int8_t flex_int8_t;$/;"	t	file:
+flex_int8_t	lex.yyfunc.c	/^typedef signed char flex_int8_t;$/;"	t	file:
+flex_uint16_t	lex.yy.c	/^typedef uint16_t flex_uint16_t;$/;"	t	file:
+flex_uint16_t	lex.yy.c	/^typedef unsigned short int flex_uint16_t;$/;"	t	file:
+flex_uint16_t	lex.yyfunc.c	/^typedef uint16_t flex_uint16_t;$/;"	t	file:
+flex_uint16_t	lex.yyfunc.c	/^typedef unsigned short int flex_uint16_t;$/;"	t	file:
+flex_uint32_t	lex.yy.c	/^typedef uint32_t flex_uint32_t;$/;"	t	file:
+flex_uint32_t	lex.yy.c	/^typedef unsigned int flex_uint32_t;$/;"	t	file:
+flex_uint32_t	lex.yyfunc.c	/^typedef uint32_t flex_uint32_t;$/;"	t	file:
+flex_uint32_t	lex.yyfunc.c	/^typedef unsigned int flex_uint32_t;$/;"	t	file:
+flex_uint8_t	lex.yy.c	/^typedef uint8_t flex_uint8_t;$/;"	t	file:
+flex_uint8_t	lex.yy.c	/^typedef unsigned char flex_uint8_t; $/;"	t	file:
+flex_uint8_t	lex.yyfunc.c	/^typedef uint8_t flex_uint8_t;$/;"	t	file:
+flex_uint8_t	lex.yyfunc.c	/^typedef unsigned char flex_uint8_t; $/;"	t	file:
+func_c	test.cc	/^Function func_ps, func_p, func_s, func_o, func_li, func_c;$/;"	v
+func_li	test.cc	/^Function func_ps, func_p, func_s, func_o, func_li, func_c;$/;"	v
+func_o	test.cc	/^Function func_ps, func_p, func_s, func_o, func_li, func_c;$/;"	v
+func_p	test.cc	/^Function func_ps, func_p, func_s, func_o, func_li, func_c;$/;"	v
+func_ps	test.cc	/^Function func_ps, func_p, func_s, func_o, func_li, func_c;$/;"	v
+func_s	test.cc	/^Function func_ps, func_p, func_s, func_o, func_li, func_c;$/;"	v
+get_cnf	test.h	/^	void get_cnf (CNF &cnf_pred, Record &literal) {$/;"	f	class:relation
+get_cnf	test.h	/^	void get_cnf (char *input, CNF &cnf_pred, Record &literal) {$/;"	f	class:relation
+get_cnf	test.h	/^	void get_cnf (char *input, Function &fn_pred) {$/;"	f	class:relation
+get_cnf	test.h	/^void get_cnf (char *input, Schema *left, CNF &cnf_pred, Record &literal) {$/;"	f
+get_cnf	test.h	/^void get_cnf (char *input, Schema *left, Function &fn_pred) {$/;"	f
+get_cnf	test.h	/^void get_cnf (char *input, Schema *left, Schema *right, CNF &cnf_pred, Record &literal) {$/;"	f
+get_file_cnf	test.h	/^	void get_file_cnf (const char *fpath, CNF &cnf_pred, Record &literal) {$/;"	f	class:relation
+get_sort_order	test.h	/^	void get_sort_order (OrderMaker &sortorder) {$/;"	f	class:relation
+heap	DBFile.h	/^typedef enum {heap, sorted, tree} fType;$/;"	e	enum:__anon4
+info	test.h	/^	void info () {$/;"	f	class:relation
+init_SF_c	test.cc	/^void init_SF_c (char *pred_str, int numpgs) {$/;"	f
+init_SF_li	test.cc	/^void init_SF_li (char *pred_str, int numpgs) {$/;"	f
+init_SF_o	test.cc	/^void init_SF_o (char *pred_str, int numpgs) {$/;"	f
+init_SF_p	test.cc	/^void init_SF_p (char *pred_str, int numpgs) {$/;"	f
+init_SF_ps	test.cc	/^void init_SF_ps (char *pred_str, int numpgs) {$/;"	f
+init_SF_s	test.cc	/^void init_SF_s (char *pred_str, int numpgs) {$/;"	f
+init_lexical_parser	lex.yy.c	/^void init_lexical_parser (char *src) { yylex_buf_state = yy_scan_string (src); }$/;"	f
+init_lexical_parser_func	lex.yyfunc.c	/^void init_lexical_parser_func (char *src) { yyfunc_buf_state = yyfunc_scan_string (src); }$/;"	f
+l_base	y.tab.c	/^    YYSTYPE  *l_base;$/;"	m	struct:__anon6	file:
+l_base	yyfunc.tab.c	/^    YYSTYPE  *l_base;$/;"	m	struct:__anon8	file:
+l_mark	y.tab.c	/^    YYSTYPE  *l_mark;$/;"	m	struct:__anon6	file:
+l_mark	yyfunc.tab.c	/^    YYSTYPE  *l_mark;$/;"	m	struct:__anon8	file:
+last	TwoWayList.h	/^			Node * last;$/;"	m	struct:TwoWayList::Header
+lastSlot	Pipe.h	/^	int lastSlot;$/;"	m	class:Pipe
+left	ParseTree.h	/^	struct ComparisonOp *left;$/;"	m	struct:OrList	typeref:struct:OrList::ComparisonOp
+left	ParseTree.h	/^	struct Operand *left;$/;"	m	struct:ComparisonOp	typeref:struct:ComparisonOp::Operand
+left	ParseTree.h	/^	struct OrList *left;$/;"	m	struct:AndList	typeref:struct:AndList::OrList
+leftOperand	ParseFunc.h	/^	struct FuncOperand *leftOperand;$/;"	m	struct:FuncOperator	typeref:struct:FuncOperator::FuncOperand
+leftOperand	ParseTree.h	/^	struct FuncOperand *leftOperand;$/;"	m	struct:FuncOperator	typeref:struct:FuncOperator::FuncOperand
+leftOperator	ParseFunc.h	/^	struct FuncOperator *leftOperator;$/;"	m	struct:FuncOperator	typeref:struct:FuncOperator::FuncOperator
+leftOperator	ParseTree.h	/^	struct FuncOperator *leftOperator;$/;"	m	struct:FuncOperator	typeref:struct:FuncOperator::FuncOperator
+leftSize	TwoWayList.h	/^			int leftSize;$/;"	m	struct:TwoWayList::Header
+li	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+liAtts	test.cc	/^int liAtts = 16;$/;"	v
+lineitem	test.h	/^char *lineitem = "lineitem"; $/;"	v
+lineno	lex.yy.c	/^int lineno = 1;$/;"	v
+list	TwoWayList.h	/^		Header *list;	$/;"	m	class:TwoWayList
+litInput	Function.h	/^	void *litInput;	$/;"	m	struct:Arithmatic
+lit_c	test.cc	/^Record lit_ps, lit_p, lit_s, lit_o, lit_li, lit_c;$/;"	v
+lit_li	test.cc	/^Record lit_ps, lit_p, lit_s, lit_o, lit_li, lit_c;$/;"	v
+lit_o	test.cc	/^Record lit_ps, lit_p, lit_s, lit_o, lit_li, lit_c;$/;"	v
+lit_p	test.cc	/^Record lit_ps, lit_p, lit_s, lit_o, lit_li, lit_c;$/;"	v
+lit_ps	test.cc	/^Record lit_ps, lit_p, lit_s, lit_o, lit_li, lit_c;$/;"	v
+lit_s	test.cc	/^Record lit_ps, lit_p, lit_s, lit_o, lit_li, lit_c;$/;"	v
+main	test.cc	/^int main (int argc, char *argv[]) {$/;"	f
+myAndList	y.tab.c	/^  	struct AndList *myAndList;$/;"	m	union:__anon5	typeref:struct:__anon5::AndList	file:
+myAndList	y.tab.h	/^  	struct AndList *myAndList;$/;"	m	union:__anon3	typeref:struct:__anon3::AndList
+myAtts	Schema.h	/^	Attribute *myAtts;$/;"	m	class:Schema
+myComparison	y.tab.c	/^	struct ComparisonOp *myComparison; $/;"	m	union:__anon5	typeref:struct:__anon5::ComparisonOp	file:
+myComparison	y.tab.h	/^	struct ComparisonOp *myComparison; $/;"	m	union:__anon3	typeref:struct:__anon3::ComparisonOp
+myFilDes	File.h	/^	int myFilDes;$/;"	m	class:File
+myOp	Function.h	/^	ArithOp myOp;$/;"	m	struct:Arithmatic
+myOperand	y.tab.c	/^ 	struct Operand *myOperand;$/;"	m	union:__anon5	typeref:struct:__anon5::Operand	file:
+myOperand	y.tab.h	/^ 	struct Operand *myOperand;$/;"	m	union:__anon3	typeref:struct:__anon3::Operand
+myOperand	yyfunc.tab.c	/^ 	struct FuncOperand *myOperand;$/;"	m	union:__anon7	typeref:struct:__anon7::FuncOperand	file:
+myOperand	yyfunc.tab.h	/^ 	struct FuncOperand *myOperand;$/;"	m	union:__anon2	typeref:struct:__anon2::FuncOperand
+myOperator	yyfunc.tab.c	/^	struct FuncOperator *myOperator; $/;"	m	union:__anon7	typeref:struct:__anon7::FuncOperator	file:
+myOperator	yyfunc.tab.h	/^	struct FuncOperator *myOperator; $/;"	m	union:__anon2	typeref:struct:__anon2::FuncOperator
+myOrList	y.tab.c	/^  	struct OrList *myOrList;$/;"	m	union:__anon5	typeref:struct:__anon5::OrList	file:
+myOrList	y.tab.h	/^  	struct OrList *myOrList;$/;"	m	union:__anon3	typeref:struct:__anon3::OrList
+myRecs	File.h	/^	TwoWayList <Record> *myRecs;$/;"	m	class:Page
+myType	Schema.h	/^	Type myType;$/;"	m	struct:Attribute
+n	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+nAtts	test.cc	/^int nAtts = 4;$/;"	v
+name	Schema.h	/^	char *name;$/;"	m	struct:Attribute
+name	Schema.h	/^	char *name;$/;"	m	struct:att_pair
+name	test.h	/^	char* name () { return rname; }$/;"	f	class:relation
+nation	test.h	/^char *nation = "nation"; $/;"	v
+next	TwoWayList.h	/^			Node *next;$/;"	m	struct:TwoWayList::Node
+numAnds	Comparison.h	/^	int numAnds;$/;"	m	class:CNF
+numAtts	Comparison.h	/^	int numAtts;$/;"	m	class:OrderMaker
+numAtts	Schema.h	/^	int numAtts;$/;"	m	class:Schema
+numOps	Function.h	/^	int numOps;$/;"	m	class:Function
+numRecs	File.h	/^	int numRecs;$/;"	m	class:Page
+o	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+oAtts	test.cc	/^int oAtts = 9;$/;"	v
+op	Comparison.h	/^	CompOperator op;$/;"	m	class:Comparison
+opList	Function.h	/^	Arithmatic *opList;$/;"	m	class:Function
+operand1	Comparison.h	/^	Target operand1;$/;"	m	class:Comparison
+operand2	Comparison.h	/^	Target operand2;$/;"	m	class:Comparison
+operator &=	TwoWayList.cc	/^TwoWayList <Type> :: operator &= (TwoWayList & List)$/;"	f	class:TwoWayList
+orLens	Comparison.h	/^	int orLens[MAX_ANDS];$/;"	m	class:CNF
+orList	Comparison.h	/^	Comparison orList[MAX_ANDS][MAX_ORS];$/;"	m	class:CNF
+order	test.h	/^	OrderMaker *order;$/;"	m	struct:__anon1
+orders	test.h	/^char *orders = "orders"; $/;"	v
+p	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+pAtts	test.cc	/^int pAtts = 9;$/;"	v
+part	test.h	/^char *part = "part"; $/;"	v
+partsupp	test.h	/^char *partsupp = "partsupp"; $/;"	v
+path	test.h	/^	char* path () { return rpath; }$/;"	f	class:relation
+pipe	test.h	/^	Pipe *pipe;$/;"	m	struct:__anon1
+pipeMutex	Pipe.h	/^	pthread_mutex_t pipeMutex;$/;"	m	class:Pipe
+pipesz	test.cc	/^int pipesz = 100; \/\/ buffer sz allowed for each pipe$/;"	v
+prefix	test.h	/^	char *prefix;$/;"	m	class:relation
+previous	TwoWayList.h	/^			Node *previous;$/;"	m	struct:TwoWayList::Node
+print	test.h	/^	bool print;$/;"	m	struct:__anon1
+producerVar	Pipe.h	/^	pthread_cond_t producerVar;$/;"	m	class:Pipe
+ps	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+psAtts	test.cc	/^int psAtts = 5;$/;"	v
+q1	test.cc	/^void q1 () {$/;"	f
+q2	test.cc	/^void q2 () {$/;"	f
+q3	test.cc	/^void q3 () {$/;"	f
+q4	test.cc	/^void q4 () {$/;"	f
+q5	test.cc	/^void q5 () {$/;"	f
+q6	test.cc	/^void q6 () {$/;"	f
+q7	test.cc	/^void q7 () { $/;"	f
+q8	test.cc	/^void q8 () { $/;"	f
+r	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+rAtts	test.cc	/^int rAtts = 3;$/;"	v
+recInput	Function.h	/^	int recInput;$/;"	m	struct:Arithmatic
+region	test.h	/^char *region = "region"; $/;"	v
+rel	test.h	/^relation *rel;$/;"	v
+relation	test.h	/^	relation (char *_name, Schema *_schema, char *_prefix) :$/;"	f	class:relation
+relation	test.h	/^class relation {$/;"	c
+returnsInt	Function.h	/^	int returnsInt;$/;"	m	class:Function
+right	ParseFunc.h	/^	struct FuncOperator *right;	$/;"	m	struct:FuncOperator	typeref:struct:FuncOperator::FuncOperator
+right	ParseTree.h	/^	struct FuncOperator *right;	$/;"	m	struct:FuncOperator	typeref:struct:FuncOperator::FuncOperator
+right	ParseTree.h	/^	struct Operand *right;	$/;"	m	struct:ComparisonOp	typeref:struct:ComparisonOp::Operand
+rightAnd	ParseTree.h	/^	struct AndList *rightAnd;$/;"	m	struct:AndList	typeref:struct:AndList::AndList
+rightOr	ParseTree.h	/^	struct OrList *rightOr;$/;"	m	struct:OrList	typeref:struct:OrList::OrList
+rightSize	TwoWayList.h	/^			int rightSize;$/;"	m	struct:TwoWayList::Header
+rname	test.h	/^	char *rname;$/;"	m	class:relation
+rpath	test.h	/^	char rpath[100]; $/;"	m	class:relation
+rschema	test.h	/^	Schema *rschema;$/;"	m	class:relation
+s	test.h	/^relation *s, *p, *ps, *n, *li, *r, *o, *c;$/;"	v
+sAtts	test.cc	/^int sAtts = 7;$/;"	v
+s_base	y.tab.c	/^    short    *s_base;$/;"	m	struct:__anon6	file:
+s_base	yyfunc.tab.c	/^    short    *s_base;$/;"	m	struct:__anon8	file:
+s_last	y.tab.c	/^    short    *s_last;$/;"	m	struct:__anon6	file:
+s_last	yyfunc.tab.c	/^    short    *s_last;$/;"	m	struct:__anon8	file:
+s_mark	y.tab.c	/^    short    *s_mark;$/;"	m	struct:__anon6	file:
+s_mark	yyfunc.tab.c	/^    short    *s_mark;$/;"	m	struct:__anon8	file:
+schema	test.h	/^	Schema* schema () { return rschema;}$/;"	f	class:relation
+settings	test.h	/^const char *settings = "test.cat";$/;"	v
+setup	test.h	/^void setup () {$/;"	f
+sorted	DBFile.h	/^typedef enum {heap, sorted, tree} fType;$/;"	e	enum:__anon4
+stacksize	y.tab.c	/^    unsigned stacksize;$/;"	m	struct:__anon6	file:
+stacksize	yyfunc.tab.c	/^    unsigned stacksize;$/;"	m	struct:__anon8	file:
+supplier	test.h	/^char *supplier = "supplier"; $/;"	v
+tag	Makefile	/^tag = -i$/;"	m
+tag	Makefile	/^tag = -n$/;"	m
+testutil	test.h	/^}testutil;$/;"	t	typeref:struct:__anon1
+totSpace	Pipe.h	/^	int totSpace;$/;"	m	class:Pipe
+tpch_dir	test.h	/^char *catalog_path, *dbfile_dir, *tpch_dir = NULL;$/;"	v
+tree	DBFile.h	/^typedef enum {heap, sorted, tree} fType;$/;"	e	enum:__anon4
+type	Schema.h	/^	Type type;$/;"	m	struct:att_pair
+unput	lex.yy.c	188;"	d	file:
+unput	lex.yyfunc.c	207;"	d	file:
+value	ParseFunc.h	/^	char *value;$/;"	m	struct:FuncOperand
+value	ParseTree.h	/^	char *value;$/;"	m	struct:FuncOperand
+value	ParseTree.h	/^	char *value;$/;"	m	struct:Operand
+whichAtt1	Comparison.h	/^	int whichAtt1;$/;"	m	class:Comparison
+whichAtt2	Comparison.h	/^	int whichAtt2;$/;"	m	class:Comparison
+whichAtts	Comparison.h	/^	int whichAtts[MAX_ANDS];$/;"	m	class:OrderMaker
+whichOne	yyfunc.tab.c	/^	char whichOne;$/;"	m	union:__anon7	file:
+whichOne	yyfunc.tab.h	/^	char whichOne;$/;"	m	union:__anon2
+whichTypes	Comparison.h	/^	Type whichTypes[MAX_ANDS];$/;"	m	class:OrderMaker
+write	test.h	/^	bool write;$/;"	m	struct:__anon1
+yy_accept	lex.yy.c	/^static yyconst flex_int16_t yy_accept[28] =$/;"	v	file:
+yy_accept	lex.yyfunc.c	/^static yyconst flex_int16_t yy_accept[20] =$/;"	v	file:
+yy_at_bol	lex.yy.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	file:
+yy_at_bol	lex.yyfunc.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	file:
+yy_base	lex.yy.c	/^static yyconst flex_int16_t yy_base[30] =$/;"	v	file:
+yy_base	lex.yyfunc.c	/^static yyconst flex_int16_t yy_base[21] =$/;"	v	file:
+yy_bs_column	lex.yy.c	/^    int yy_bs_column; \/**< The column count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_bs_column	lex.yyfunc.c	/^    int yy_bs_column; \/**< The column count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_bs_lineno	lex.yy.c	/^    int yy_bs_lineno; \/**< The line count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_bs_lineno	lex.yyfunc.c	/^    int yy_bs_lineno; \/**< The line count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_pos	lex.yy.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_pos	lex.yyfunc.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_size	lex.yy.c	/^	yy_size_t yy_buf_size;$/;"	m	struct:yy_buffer_state	file:
+yy_buf_size	lex.yyfunc.c	/^	yy_size_t yy_buf_size;$/;"	m	struct:yy_buffer_state	file:
+yy_buffer_stack	lex.yy.c	/^static YY_BUFFER_STATE * yy_buffer_stack = 0; \/**< Stack as an array. *\/$/;"	v	file:
+yy_buffer_stack	lex.yyfunc.c	/^static YY_BUFFER_STATE * yy_buffer_stack = 0; \/**< Stack as an array. *\/$/;"	v	file:
+yy_buffer_stack_max	lex.yy.c	/^static size_t yy_buffer_stack_max = 0; \/**< capacity of stack. *\/$/;"	v	file:
+yy_buffer_stack_max	lex.yyfunc.c	/^static size_t yy_buffer_stack_max = 0; \/**< capacity of stack. *\/$/;"	v	file:
+yy_buffer_stack_top	lex.yy.c	/^static size_t yy_buffer_stack_top = 0; \/**< index of top of stack. *\/$/;"	v	file:
+yy_buffer_stack_top	lex.yyfunc.c	/^static size_t yy_buffer_stack_top = 0; \/**< index of top of stack. *\/$/;"	v	file:
+yy_buffer_state	lex.yy.c	/^struct yy_buffer_state$/;"	s	file:
+yy_buffer_state	lex.yyfunc.c	/^struct yy_buffer_state$/;"	s	file:
+yy_buffer_status	lex.yy.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	file:
+yy_buffer_status	lex.yyfunc.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	file:
+yy_c_buf_p	lex.yy.c	/^static char *yy_c_buf_p = (char *) 0;$/;"	v	file:
+yy_c_buf_p	lex.yyfunc.c	/^static char *yy_c_buf_p = (char *) 0;$/;"	v	file:
+yy_ch_buf	lex.yy.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_ch_buf	lex.yyfunc.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_chk	lex.yy.c	/^static yyconst flex_int16_t yy_chk[56] =$/;"	v	file:
+yy_chk	lex.yyfunc.c	/^static yyconst flex_int16_t yy_chk[35] =$/;"	v	file:
+yy_create_buffer	lex.yy.c	/^    YY_BUFFER_STATE yy_create_buffer  (FILE * file, int  size )$/;"	f
+yy_create_buffer	lex.yyfunc.c	8;"	d	file:
+yy_def	lex.yy.c	/^static yyconst flex_int16_t yy_def[30] =$/;"	v	file:
+yy_def	lex.yyfunc.c	/^static yyconst flex_int16_t yy_def[21] =$/;"	v	file:
+yy_delete_buffer	lex.yy.c	/^    void yy_delete_buffer (YY_BUFFER_STATE  b )$/;"	f
+yy_delete_buffer	lex.yyfunc.c	9;"	d	file:
+yy_did_buffer_switch_on_eof	lex.yy.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	file:
+yy_did_buffer_switch_on_eof	lex.yyfunc.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	file:
+yy_ec	lex.yy.c	/^static yyconst flex_int32_t yy_ec[256] =$/;"	v	file:
+yy_ec	lex.yyfunc.c	/^static yyconst flex_int32_t yy_ec[256] =$/;"	v	file:
+yy_fatal_error	lex.yy.c	/^static void yy_fatal_error (yyconst char* msg )$/;"	f	file:
+yy_fatal_error	lex.yyfunc.c	/^static void yy_fatal_error (yyconst char* msg )$/;"	f	file:
+yy_fill_buffer	lex.yy.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_fill_buffer	lex.yyfunc.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_flex_debug	lex.yy.c	/^int yy_flex_debug = 0;$/;"	v
+yy_flex_debug	lex.yyfunc.c	10;"	d	file:
+yy_flex_strlen	lex.yy.c	/^static int yy_flex_strlen (yyconst char * s )$/;"	f	file:
+yy_flex_strlen	lex.yyfunc.c	/^static int yy_flex_strlen (yyconst char * s )$/;"	f	file:
+yy_flex_strncpy	lex.yy.c	/^static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )$/;"	f	file:
+yy_flex_strncpy	lex.yyfunc.c	/^static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )$/;"	f	file:
+yy_flush_buffer	lex.yy.c	/^    void yy_flush_buffer (YY_BUFFER_STATE  b )$/;"	f
+yy_flush_buffer	lex.yyfunc.c	12;"	d	file:
+yy_get_next_buffer	lex.yy.c	/^static int yy_get_next_buffer (void)$/;"	f	file:
+yy_get_next_buffer	lex.yyfunc.c	/^static int yy_get_next_buffer (void)$/;"	f	file:
+yy_get_previous_state	lex.yy.c	/^    static yy_state_type yy_get_previous_state (void)$/;"	f	file:
+yy_get_previous_state	lex.yyfunc.c	/^    static yy_state_type yy_get_previous_state (void)$/;"	f	file:
+yy_hold_char	lex.yy.c	/^static char yy_hold_char;$/;"	v	file:
+yy_hold_char	lex.yyfunc.c	/^static char yy_hold_char;$/;"	v	file:
+yy_init	lex.yy.c	/^static int yy_init = 0;		\/* whether we need to initialize *\/$/;"	v	file:
+yy_init	lex.yyfunc.c	/^static int yy_init = 0;		\/* whether we need to initialize *\/$/;"	v	file:
+yy_init_buffer	lex.yy.c	/^    static void yy_init_buffer  (YY_BUFFER_STATE  b, FILE * file )$/;"	f	file:
+yy_init_buffer	lex.yyfunc.c	11;"	d	file:
+yy_init_globals	lex.yy.c	/^static int yy_init_globals (void)$/;"	f	file:
+yy_init_globals	lex.yyfunc.c	/^static int yy_init_globals (void)$/;"	f	file:
+yy_input_file	lex.yy.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	file:
+yy_input_file	lex.yyfunc.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	file:
+yy_is_interactive	lex.yy.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	file:
+yy_is_interactive	lex.yyfunc.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	file:
+yy_is_our_buffer	lex.yy.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_is_our_buffer	lex.yyfunc.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_last_accepting_cpos	lex.yy.c	/^static char *yy_last_accepting_cpos;$/;"	v	file:
+yy_last_accepting_cpos	lex.yyfunc.c	/^static char *yy_last_accepting_cpos;$/;"	v	file:
+yy_last_accepting_state	lex.yy.c	/^static yy_state_type yy_last_accepting_state;$/;"	v	file:
+yy_last_accepting_state	lex.yyfunc.c	/^static yy_state_type yy_last_accepting_state;$/;"	v	file:
+yy_load_buffer_state	lex.yy.c	/^static void yy_load_buffer_state  (void)$/;"	f	file:
+yy_load_buffer_state	lex.yyfunc.c	13;"	d	file:
+yy_meta	lex.yy.c	/^static yyconst flex_int32_t yy_meta[20] =$/;"	v	file:
+yy_meta	lex.yyfunc.c	/^static yyconst flex_int32_t yy_meta[14] =$/;"	v	file:
+yy_more_flag	lex.yy.c	/^static int yy_more_flag = 0;$/;"	v	file:
+yy_more_len	lex.yy.c	/^static int yy_more_len = 0;$/;"	v	file:
+yy_n_chars	lex.yy.c	/^	int yy_n_chars;$/;"	m	struct:yy_buffer_state	file:
+yy_n_chars	lex.yy.c	/^static int yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	file:
+yy_n_chars	lex.yyfunc.c	/^	int yy_n_chars;$/;"	m	struct:yy_buffer_state	file:
+yy_n_chars	lex.yyfunc.c	/^static int yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	file:
+yy_new_buffer	lex.yy.c	317;"	d	file:
+yy_new_buffer	lex.yyfunc.c	336;"	d	file:
+yy_nxt	lex.yy.c	/^	flex_int32_t yy_nxt;$/;"	m	struct:yy_trans_info	file:
+yy_nxt	lex.yy.c	/^static yyconst flex_int16_t yy_nxt[56] =$/;"	v	file:
+yy_nxt	lex.yyfunc.c	/^	flex_int32_t yy_nxt;$/;"	m	struct:yy_trans_info	file:
+yy_nxt	lex.yyfunc.c	/^static yyconst flex_int16_t yy_nxt[35] =$/;"	v	file:
+yy_scan_buffer	lex.yy.c	/^YY_BUFFER_STATE yy_scan_buffer  (char * base, yy_size_t  size )$/;"	f
+yy_scan_bytes	lex.yy.c	/^YY_BUFFER_STATE yy_scan_bytes  (yyconst char * yybytes, int  _yybytes_len )$/;"	f
+yy_scan_string	lex.yy.c	/^YY_BUFFER_STATE yy_scan_string (yyconst char * yystr )$/;"	f
+yy_set_bol	lex.yy.c	329;"	d	file:
+yy_set_bol	lex.yyfunc.c	348;"	d	file:
+yy_set_interactive	lex.yy.c	319;"	d	file:
+yy_set_interactive	lex.yyfunc.c	338;"	d	file:
+yy_size_t	lex.yy.c	/^typedef size_t yy_size_t;$/;"	t	file:
+yy_size_t	lex.yyfunc.c	/^typedef size_t yy_size_t;$/;"	t	file:
+yy_start	lex.yy.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	file:
+yy_start	lex.yyfunc.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	file:
+yy_state_type	lex.yy.c	/^typedef int yy_state_type;$/;"	t	file:
+yy_state_type	lex.yyfunc.c	/^typedef int yy_state_type;$/;"	t	file:
+yy_switch_to_buffer	lex.yy.c	/^    void yy_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )$/;"	f
+yy_switch_to_buffer	lex.yyfunc.c	14;"	d	file:
+yy_trans_info	lex.yy.c	/^struct yy_trans_info$/;"	s	file:
+yy_trans_info	lex.yyfunc.c	/^struct yy_trans_info$/;"	s	file:
+yy_try_NUL_trans	lex.yy.c	/^    static yy_state_type yy_try_NUL_trans  (yy_state_type yy_current_state )$/;"	f	file:
+yy_try_NUL_trans	lex.yyfunc.c	/^    static yy_state_type yy_try_NUL_trans  (yy_state_type yy_current_state )$/;"	f	file:
+yy_verify	lex.yy.c	/^	flex_int32_t yy_verify;$/;"	m	struct:yy_trans_info	file:
+yy_verify	lex.yyfunc.c	/^	flex_int32_t yy_verify;$/;"	m	struct:yy_trans_info	file:
+yyalloc	lex.yy.c	/^void *yyalloc (yy_size_t  size )$/;"	f
+yyalloc	lex.yyfunc.c	23;"	d	file:
+yychar	y.tab.c	/^int      yychar;$/;"	v
+yychar	yyfunc.tab.c	/^int      yychar;$/;"	v
+yychar	yyfunc.tab.c	29;"	d	file:
+yycheck	y.tab.c	/^static const short yycheck[] = {                         41,$/;"	v	file:
+yycheck	yyfunc.tab.c	85;"	d	file:
+yyclearin	y.tab.c	11;"	d	file:
+yyclearin	yyfunc.tab.c	11;"	d	file:
+yyconst	lex.yy.c	106;"	d	file:
+yyconst	lex.yy.c	108;"	d	file:
+yyconst	lex.yyfunc.c	125;"	d	file:
+yyconst	lex.yyfunc.c	127;"	d	file:
+yydebug	y.tab.c	/^int      yydebug;$/;"	v
+yydebug	yyfunc.tab.c	/^int      yydebug;$/;"	v
+yydebug	yyfunc.tab.c	41;"	d	file:
+yydefred	y.tab.c	/^static const short yydefred[] = {                         0,$/;"	v	file:
+yydefred	yyfunc.tab.c	61;"	d	file:
+yydgoto	y.tab.c	/^static const short yydgoto[] = {                          2,$/;"	v	file:
+yydgoto	yyfunc.tab.c	65;"	d	file:
+yyensure_buffer_stack	lex.yy.c	/^static void yyensure_buffer_stack (void)$/;"	f	file:
+yyerrflag	y.tab.c	/^int      yyerrflag;$/;"	v
+yyerrflag	yyfunc.tab.c	/^int      yyerrflag;$/;"	v
+yyerrflag	yyfunc.tab.c	49;"	d	file:
+yyerrok	y.tab.c	12;"	d	file:
+yyerrok	yyfunc.tab.c	12;"	d	file:
+yyerror	lex.yy.c	/^void yyerror(char *s) {$/;"	f
+yyerror	yyfunc.tab.c	25;"	d	file:
+yyfree	lex.yy.c	/^void yyfree (void * ptr )$/;"	f
+yyfree	lex.yyfunc.c	25;"	d	file:
+yyfreestack	y.tab.c	/^static void yyfreestack(YYSTACKDATA *data)$/;"	f	file:
+yyfreestack	y.tab.c	287;"	d	file:
+yyfreestack	yyfunc.tab.c	/^static void yyfreestack(YYSTACKDATA *data)$/;"	f	file:
+yyfreestack	yyfunc.tab.c	362;"	d	file:
+yyfunc_buf_state	lex.yyfunc.c	/^static YY_BUFFER_STATE yyfunc_buf_state;$/;"	v	file:
+yyfunc_create_buffer	lex.yyfunc.c	/^    YY_BUFFER_STATE yyfunc_create_buffer  (FILE * file, int  size )$/;"	f
+yyfunc_delete_buffer	lex.yyfunc.c	/^    void yyfunc_delete_buffer (YY_BUFFER_STATE  b )$/;"	f
+yyfunc_flex_debug	lex.yyfunc.c	/^int yyfunc_flex_debug = 0;$/;"	v
+yyfunc_flush_buffer	lex.yyfunc.c	/^    void yyfunc_flush_buffer (YY_BUFFER_STATE  b )$/;"	f
+yyfunc_init_buffer	lex.yyfunc.c	/^    static void yyfunc_init_buffer  (YY_BUFFER_STATE  b, FILE * file )$/;"	f	file:
+yyfunc_load_buffer_state	lex.yyfunc.c	/^static void yyfunc_load_buffer_state  (void)$/;"	f	file:
+yyfunc_scan_buffer	lex.yyfunc.c	/^YY_BUFFER_STATE yyfunc_scan_buffer  (char * base, yy_size_t  size )$/;"	f
+yyfunc_scan_bytes	lex.yyfunc.c	/^YY_BUFFER_STATE yyfunc_scan_bytes  (yyconst char * yybytes, int  _yybytes_len )$/;"	f
+yyfunc_scan_string	lex.yyfunc.c	/^YY_BUFFER_STATE yyfunc_scan_string (yyconst char * yystr )$/;"	f
+yyfunc_switch_to_buffer	lex.yyfunc.c	/^    void yyfunc_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )$/;"	f
+yyfuncalloc	lex.yyfunc.c	/^void *yyfuncalloc (yy_size_t  size )$/;"	f
+yyfunccheck	yyfunc.tab.c	/^static const short yyfunccheck[] = {                     40,$/;"	v	file:
+yyfuncdefred	yyfunc.tab.c	/^static const short yyfuncdefred[] = {                     0,$/;"	v	file:
+yyfuncdgoto	yyfunc.tab.c	/^static const short yyfuncdgoto[] = {                      6,$/;"	v	file:
+yyfuncensure_buffer_stack	lex.yyfunc.c	/^static void yyfuncensure_buffer_stack (void)$/;"	f	file:
+yyfuncerror	lex.yyfunc.c	/^void yyfuncerror(char *s) {$/;"	f
+yyfuncfree	lex.yyfunc.c	/^void yyfuncfree (void * ptr )$/;"	f
+yyfuncget_debug	lex.yyfunc.c	/^int yyfuncget_debug  (void)$/;"	f
+yyfuncget_in	lex.yyfunc.c	/^FILE *yyfuncget_in  (void)$/;"	f
+yyfuncget_leng	lex.yyfunc.c	/^int yyfuncget_leng  (void)$/;"	f
+yyfuncget_lineno	lex.yyfunc.c	/^int yyfuncget_lineno  (void)$/;"	f
+yyfuncget_out	lex.yyfunc.c	/^FILE *yyfuncget_out  (void)$/;"	f
+yyfuncget_text	lex.yyfunc.c	/^char *yyfuncget_text  (void)$/;"	f
+yyfuncgindex	yyfunc.tab.c	/^static const short yyfuncgindex[] = {                    -1,$/;"	v	file:
+yyfuncin	lex.yyfunc.c	/^FILE *yyfuncin = (FILE *) 0, *yyfuncout = (FILE *) 0;$/;"	v
+yyfunclen	yyfunc.tab.c	/^static const short yyfunclen[] = {                        2,$/;"	v	file:
+yyfuncleng	lex.yyfunc.c	/^int yyfuncleng;$/;"	v
+yyfunclex_destroy	lex.yyfunc.c	/^int yyfunclex_destroy  (void)$/;"	f
+yyfunclhs	yyfunc.tab.c	/^static const short yyfunclhs[] = {                       -1,$/;"	v	file:
+yyfunclineno	lex.yyfunc.c	/^int yyfunclineno = 1;$/;"	v
+yyfuncout	lex.yyfunc.c	/^FILE *yyfuncin = (FILE *) 0, *yyfuncout = (FILE *) 0;$/;"	v
+yyfuncpop_buffer_state	lex.yyfunc.c	/^void yyfuncpop_buffer_state (void)$/;"	f
+yyfuncpush_buffer_state	lex.yyfunc.c	/^void yyfuncpush_buffer_state (YY_BUFFER_STATE new_buffer )$/;"	f
+yyfuncrealloc	lex.yyfunc.c	/^void *yyfuncrealloc  (void * ptr, yy_size_t  size )$/;"	f
+yyfuncrestart	lex.yyfunc.c	/^    void yyfuncrestart  (FILE * input_file )$/;"	f
+yyfuncrindex	yyfunc.tab.c	/^static const short yyfuncrindex[] = {                     0,$/;"	v	file:
+yyfuncset_debug	lex.yyfunc.c	/^void yyfuncset_debug (int  bdebug )$/;"	f
+yyfuncset_in	lex.yyfunc.c	/^void yyfuncset_in (FILE *  in_str )$/;"	f
+yyfuncset_lineno	lex.yyfunc.c	/^void yyfuncset_lineno (int  line_number )$/;"	f
+yyfuncset_out	lex.yyfunc.c	/^void yyfuncset_out (FILE *  out_str )$/;"	f
+yyfuncsindex	yyfunc.tab.c	/^static const short yyfuncsindex[] = {                   -40,$/;"	v	file:
+yyfunctable	yyfunc.tab.c	/^static const short yyfunctable[] = {                      4,$/;"	v	file:
+yyfunctext	lex.yyfunc.c	/^char *yyfunctext;$/;"	v
+yyfuncwrap	lex.yyfunc.c	/^int yyfuncwrap(void){$/;"	f
+yyget_debug	lex.yy.c	/^int yyget_debug  (void)$/;"	f
+yyget_in	lex.yy.c	/^FILE *yyget_in  (void)$/;"	f
+yyget_leng	lex.yy.c	/^int yyget_leng  (void)$/;"	f
+yyget_lineno	lex.yy.c	/^int yyget_lineno  (void)$/;"	f
+yyget_out	lex.yy.c	/^FILE *yyget_out  (void)$/;"	f
+yyget_text	lex.yy.c	/^char *yyget_text  (void)$/;"	f
+yygindex	y.tab.c	/^static const short yygindex[] = {                        -2,$/;"	v	file:
+yygindex	yyfunc.tab.c	77;"	d	file:
+yygrowstack	y.tab.c	/^static int yygrowstack(YYSTACKDATA *data)$/;"	f	file:
+yygrowstack	yyfunc.tab.c	/^static int yygrowstack(YYSTACKDATA *data)$/;"	f	file:
+yyin	lex.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yyin	lex.yyfunc.c	15;"	d	file:
+yyinput	lex.yy.c	/^    static int yyinput (void)$/;"	f	file:
+yyinput	lex.yyfunc.c	/^    static int yyinput (void)$/;"	f	file:
+yylen	y.tab.c	/^static const short yylen[] = {                            2,$/;"	v	file:
+yylen	yyfunc.tab.c	57;"	d	file:
+yyleng	lex.yy.c	/^int yyleng;$/;"	v
+yyleng	lex.yyfunc.c	16;"	d	file:
+yyless	lex.yy.c	1683;"	d	file:
+yyless	lex.yy.c	1684;"	d	file:
+yyless	lex.yy.c	175;"	d	file:
+yyless	lex.yyfunc.c	1669;"	d	file:
+yyless	lex.yyfunc.c	1670;"	d	file:
+yyless	lex.yyfunc.c	194;"	d	file:
+yylex	lex.yyfunc.c	17;"	d	file:
+yylex	yyfunc.tab.c	21;"	d	file:
+yylex_buf_state	lex.yy.c	/^static YY_BUFFER_STATE yylex_buf_state;$/;"	v	file:
+yylex_destroy	lex.yy.c	/^int yylex_destroy  (void)$/;"	f
+yylhs	y.tab.c	/^static const short yylhs[] = {                           -1,$/;"	v	file:
+yylhs	yyfunc.tab.c	53;"	d	file:
+yylineno	lex.yy.c	/^int yylineno = 1;$/;"	v
+yylineno	lex.yyfunc.c	18;"	d	file:
+yylval	y.tab.c	/^YYSTYPE  yylval;$/;"	v
+yylval	yyfunc.tab.c	/^YYSTYPE  yylval;$/;"	v
+yylval	yyfunc.tab.c	37;"	d	file:
+yymore	lex.yy.c	472;"	d	file:
+yymore	lex.yyfunc.c	481;"	d	file:
+yyname	y.tab.c	/^static const char *yyname[] = {$/;"	v	file:
+yyname	yyfunc.tab.c	/^static const char *yyname[] = {$/;"	v	file:
+yyname	yyfunc.tab.c	89;"	d	file:
+yynerrs	y.tab.c	/^int      yynerrs;$/;"	v
+yynerrs	yyfunc.tab.c	/^int      yynerrs;$/;"	v
+yynerrs	yyfunc.tab.c	45;"	d	file:
+yyout	lex.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yyout	lex.yyfunc.c	19;"	d	file:
+yyparse	yyfunc.tab.c	17;"	d	file:
+yypop_buffer_state	lex.yy.c	/^void yypop_buffer_state (void)$/;"	f
+yypush_buffer_state	lex.yy.c	/^void yypush_buffer_state (YY_BUFFER_STATE new_buffer )$/;"	f
+yyrealloc	lex.yy.c	/^void *yyrealloc  (void * ptr, yy_size_t  size )$/;"	f
+yyrealloc	lex.yyfunc.c	24;"	d	file:
+yyrestart	lex.yy.c	/^    void yyrestart  (FILE * input_file )$/;"	f
+yyrestart	lex.yyfunc.c	20;"	d	file:
+yyrindex	y.tab.c	/^static const short yyrindex[] = {                         0,$/;"	v	file:
+yyrindex	yyfunc.tab.c	73;"	d	file:
+yyrule	y.tab.c	/^static const char *yyrule[] = {$/;"	v	file:
+yyrule	yyfunc.tab.c	/^static const char *yyrule[] = {$/;"	v	file:
+yyrule	yyfunc.tab.c	93;"	d	file:
+yysccsid	y.tab.c	/^static const char yysccsid[] = "@(#)yaccpar	1.9 (Berkeley) 02\/21\/93";$/;"	v	file:
+yysccsid	yyfunc.tab.c	/^static const char yysccsid[] = "@(#)yaccpar	1.9 (Berkeley) 02\/21\/93";$/;"	v	file:
+yyset_debug	lex.yy.c	/^void yyset_debug (int  bdebug )$/;"	f
+yyset_in	lex.yy.c	/^void yyset_in (FILE *  in_str )$/;"	f
+yyset_lineno	lex.yy.c	/^void yyset_lineno (int  line_number )$/;"	f
+yyset_out	lex.yy.c	/^void yyset_out (FILE *  out_str )$/;"	f
+yysindex	y.tab.c	/^static const short yysindex[] = {                       -32,$/;"	v	file:
+yysindex	yyfunc.tab.c	69;"	d	file:
+yystack	y.tab.c	/^static YYSTACKDATA yystack;$/;"	v	file:
+yystack	yyfunc.tab.c	/^static YYSTACKDATA yystack;$/;"	v	file:
+yytable	y.tab.c	/^static const short yytable[] = {                          6,$/;"	v	file:
+yytable	yyfunc.tab.c	81;"	d	file:
+yyterminate	lex.yy.c	647;"	d	file:
+yyterminate	lex.yyfunc.c	657;"	d	file:
+yytext	lex.yy.c	/^char *yytext;$/;"	v
+yytext	lex.yyfunc.c	21;"	d	file:
+yytext_ptr	lex.yy.c	354;"	d	file:
+yytext_ptr	lex.yyfunc.c	373;"	d	file:
+yyunput	lex.yy.c	/^    static void yyunput (int c, register char * yy_bp )$/;"	f	file:
+yyunput	lex.yyfunc.c	/^    static void yyunput (int c, register char * yy_bp )$/;"	f	file:
+yyval	y.tab.c	/^YYSTYPE  yyval;$/;"	v
+yyval	yyfunc.tab.c	/^YYSTYPE  yyval;$/;"	v
+yyval	yyfunc.tab.c	33;"	d	file:
+yywrap	lex.yy.c	/^int yywrap(void){$/;"	f
+yywrap	lex.yyfunc.c	22;"	d	file:
+~BigQ	BigQ.cc	/^BigQ::~BigQ () {$/;"	f	class:BigQ
+~File	File.cc	/^File :: ~File () {$/;"	f	class:File
+~Node	TwoWayList.h	/^			~Node () $/;"	f	struct:TwoWayList::Node
+~Page	File.cc	/^Page :: ~Page () {$/;"	f	class:Page
+~Pipe	Pipe.cc	/^Pipe :: ~Pipe () {$/;"	f	class:Pipe
+~Record	Record.cc	/^Record :: ~Record () {$/;"	f	class:Record
+~Schema	Schema.cc	/^Schema :: ~Schema () {$/;"	f	class:Schema
+~TwoWayList	TwoWayList.cc	/^TwoWayList <Type> :: ~TwoWayList ()$/;"	f	class:TwoWayList
