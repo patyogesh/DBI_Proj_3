@@ -79,11 +79,12 @@ private:
 	pthread_t   thread;
 	static int m_runLen;
 
-	void* DuplicateRemoval_Worker(void*);
+	static void* DuplicateRemoval_Worker(void*);
+
 	public:
-	void Run (Pipe &inPipe, Pipe &outPipe, Schema &mySchema) { }
-	void WaitUntilDone () { }
-	void Use_n_Pages (int n) { }
+	void Run (Pipe &inPipe, Pipe &outPipe, Schema &mySchema);
+	void WaitUntilDone ();
+	void Use_n_Pages (int n);
 };
 class Sum : public RelationalOp {
 private:
@@ -91,9 +92,9 @@ private:
 
 	 static void* Sum_Worker(void*);
 	public:
-	void Run (Pipe &inPipe, Pipe &outPipe, Function &computeMe) { }
-	void WaitUntilDone () { }
-	void Use_n_Pages (int n) { }
+	void Run (Pipe &inPipe, Pipe &outPipe, Function &computeMe);
+	void WaitUntilDone ();
+	void Use_n_Pages (int n);
 };
 class GroupBy : public RelationalOp {
 private :
@@ -103,9 +104,9 @@ private:
 	 static void* GroupBy_Worker(void*);
 
 	public:
-	void Run (Pipe &inPipe, Pipe &outPipe, OrderMaker &groupAtts, Function &computeMe) { }
-	void WaitUntilDone () { }
-	void Use_n_Pages (int n) { }
+	void Run (Pipe &inPipe, Pipe &outPipe, OrderMaker &groupAtts, Function &computeMe);
+	void WaitUntilDone ();
+	void Use_n_Pages (int n);
 };
 class WriteOut : public RelationalOp {
 	public:

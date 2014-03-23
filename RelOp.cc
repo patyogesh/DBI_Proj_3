@@ -1,5 +1,6 @@
 #include "RelOp.h"
-
+#include <sys/time.h>
+#include <sstream>
 
 int ctr = 1;
 void *
@@ -151,7 +152,7 @@ void Project::Use_n_Pages (int runlen) {
 }
 //--------------- DuplicateRemoval ------------------
 
-int DuplicateRemoval::m_runLen = 7;
+//int DuplicateRemoval::m_runLen = 7;
 
 void DuplicateRemoval::Run(Pipe &inPipe, Pipe &outPipe, Schema &mySchema)
 {
@@ -168,7 +169,7 @@ void DuplicateRemoval::Run(Pipe &inPipe, Pipe &outPipe, Schema &mySchema)
     }
     pthread_create(&thread, NULL, &DuplicateRemoval_Worker,
     		 (void *)t_in_params);
-    return;
+   // return;
 }
 
 void * DuplicateRemoval::DuplicateRemoval_Worker(void * vptr)
@@ -187,8 +188,10 @@ void * DuplicateRemoval::DuplicateRemoval_Worker(void * vptr)
         sortOrder.whichTypes[i] = atts[i].myType;
     }
 
-    Pipe localOutPipe(pipeSize);
-    BigQ B(*(t_in_params->inPipe), localOutPipe, sortOrder,m_runLen);
+     Pipe localOutPipe(pipeSize);
+
+     BigQ bigQ(*t_in_params->inPipe, *localOutPipe, sortOrder, m_runLen);
+//    BigQ B(*(t_in_params->inPipe), localOutPipe, sortOrder,m_runLen);
 
     bool bLastSeenRecSet = false;
     ComparisonEngine ce;
@@ -281,7 +284,7 @@ void Sum::WaitUntilDone()
 }
 //--------------- GroupBy ------------------
 
-void GroupBy::Use_n_Pages(int n)
+void GroupBy::Use_n_Pages(int runlen)
 {
 	this->runlen = runlen;
 }
@@ -311,17 +314,17 @@ void* GroupBy::GroupBy_Worker(void* vptr)
     BigQ localBigQ(*(t_in_params->inPipe), localOutPipe, *(t_in_params->groupAttributesOM), this->runlen);
     Record rec;
     Record *currentGroupRecord = new Record();
-    bool currentGroupActive = false;
+    bool currGroupFlag = false;
     ComparisonEngine comp;
     double sum = 0.0;
 
 
-    while(localOutPipe.Remove(&rec) || currentGroupActive)
+    while(localOutPipe.Remove(&rec) || currGroupFlag)
     {
-        if(!currentGroupActive)
+        if(!currGroupFlag)
         {
             currentGroupRecord->Copy(&rec);
-            currentGroupActive = true;
+            currGroupFlag = true;
         }
 
         //either no new record fetched (end of pipe) or new group started so just go to else part and finish the last group
@@ -348,9 +351,9 @@ void* GroupBy::GroupBy_Worker(void* vptr)
         		ss << ".";
         		ss << tval.tv_usec;
 
-        		string filename = "partial" + ss.str();
+        //		string filename = "partial" + ss.str();
 
-        	g_filePath = strdup(filename.c_str());
+//        	g_filePath = strdup(filename.c_str());
 
             // Make a file that contains this sum
             string tempSumFName = "temp_sum_data" + ss.str();
@@ -386,9 +389,7 @@ void* GroupBy::GroupBy_Worker(void* vptr)
                 rec.bits = NULL;
             }
 
-            //start new group for this record
-            currentGroupActive = false;
-            // delete file "tmp_sum_data_file"
+            currGroupFlag = false;
             if(remove(tempSumFName.c_str()) != 0)
                 perror("\nError in removing tmp_sum_data_file!");
         }
