@@ -3,6 +3,7 @@
 #include <sstream>
 
 int ctr = 1;
+/* =========================SelectFile============================================== */
 void *
 SelectFile_Worker(void *vptr)
 {
@@ -53,7 +54,7 @@ void SelectFile::WaitUntilDone ()
 void SelectFile::Use_n_Pages (int runlen) {
   this->runlen = runlen;
 }
-/* ======================================================================= */
+/* =======================SelectPipe================================================ */
 void *
 SelectPipe_Worker(void *vptr)
 {
@@ -93,7 +94,7 @@ void SelectPipe::WaitUntilDone ()
 void SelectPipe::Use_n_Pages (int runlen) {
   this->runlen = runlen;
 }
-/* ======================================================================= */
+/* ==========================Project============================================= */
 void *
 Project_Worker(void *vptr)
 {
@@ -101,13 +102,12 @@ Project_Worker(void *vptr)
 
   Record    temp;
 
-  cin >> ctr;
   ctr = 0;
   while(t_in_params->inPipe->Remove(&temp)) {
 
     temp.Project(t_in_params->atts_to_keep,
-                 t_in_params->num_atts_out,
-                 t_in_params->num_atts_in);
+        t_in_params->num_atts_out,
+        t_in_params->num_atts_in);
 
     t_in_params->outPipe->Insert(&temp);
     cout <<"\n\nInserted To Pipe : "<<++ctr;
@@ -150,7 +150,7 @@ void Project::WaitUntilDone ()
 void Project::Use_n_Pages (int runlen) {
   this->runlen = runlen;
 }
-//--------------- DuplicateRemoval ------------------
+/* ======================DuplicateRemoval====================================== */
 
 //int DuplicateRemoval::m_runLen = 7;
 
@@ -230,7 +230,7 @@ void DuplicateRemoval::WaitUntilDone()
 {
     pthread_join(thread, 0);
 }
-//--------------- Sum ------------------
+/* ========================Sum======================================= */
 
 void* Sum_Worker(void * vptr)
 {
@@ -288,7 +288,7 @@ void Sum::WaitUntilDone()
 {
     pthread_join(thread, 0);
 }
-//--------------- GroupBy ------------------
+/* ========================GroupBy================================== */
 
 void GroupBy::Use_n_Pages(int runlen)
 {
