@@ -5,6 +5,7 @@
 #include "DBFile.h"
 #include "Record.h"
 #include "Function.h"
+#include "BigQ.h"
 #include <string.h>
 #include <iostream>
 
@@ -16,6 +17,7 @@ typedef struct Thread_aparams {
   Record  *lit;
   Schema *pSchema;
   Function *computeFunc;
+  int     runlen;
 
   OrderMaker *groupAttributesOM;
   int     *atts_to_keep;
@@ -79,7 +81,7 @@ private:
 	pthread_t   thread;
 	static int m_runLen;
 
-	static void* DuplicateRemoval_Worker(void*);
+	//static void* DuplicateRemoval_Worker(void*);
 
 	public:
 	void Run (Pipe &inPipe, Pipe &outPipe, Schema &mySchema);
@@ -90,7 +92,7 @@ class Sum : public RelationalOp {
 private:
 	pthread_t   thread;
 
-	 static void* Sum_Worker(void*);
+	 //static void* Sum_Worker(void*);
 	public:
 	void Run (Pipe &inPipe, Pipe &outPipe, Function &computeMe);
 	void WaitUntilDone ();
@@ -101,7 +103,7 @@ private :
 private:
 	pthread_t   thread;
 
-	 static void* GroupBy_Worker(void*);
+	 //static void* GroupBy_Worker(void*);
 
 	public:
 	void Run (Pipe &inPipe, Pipe &outPipe, OrderMaker &groupAtts, Function &computeMe);

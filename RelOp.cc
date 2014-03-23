@@ -154,25 +154,7 @@ void Project::Use_n_Pages (int runlen) {
 
 //int DuplicateRemoval::m_runLen = 7;
 
-void DuplicateRemoval::Run(Pipe &inPipe, Pipe &outPipe, Schema &mySchema)
-{
-	 t_in_params = new (tParams_t);
-	 t_in_params->inPipe = &inPipe;
-	   t_in_params->outPipe = &outPipe;
-	   t_in_params->pSchema = &mySchema;
-
-    if (m_runLen == -1)
-    {
-        cerr << "\nError! Use_n_Page() must be called and "
-            << "pages of memory allowed for operations must be set!\n";
-        exit(1);
-    }
-    pthread_create(&thread, NULL, &DuplicateRemoval_Worker,
-    		 (void *)t_in_params);
-   // return;
-}
-
-void * DuplicateRemoval::DuplicateRemoval_Worker(void * vptr)
+void* DuplicateRemoval_Worker(void * vptr)
 {
 	 tParams_t *t_in_params = (tParams_t *) vptr;
     Record lastSeenRec, currentRec;
@@ -190,7 +172,7 @@ void * DuplicateRemoval::DuplicateRemoval_Worker(void * vptr)
 
      Pipe localOutPipe(pipeSize);
 
-     BigQ bigQ(*t_in_params->inPipe, *localOutPipe, sortOrder, m_runLen);
+     BigQ bigQ(*t_in_params->inPipe, localOutPipe, sortOrder, t_in_params->runlen);
 //    BigQ B(*(t_in_params->inPipe), localOutPipe, sortOrder,m_runLen);
 
     bool bLastSeenRecSet = false;
@@ -219,6 +201,25 @@ void * DuplicateRemoval::DuplicateRemoval_Worker(void * vptr)
     delete t_in_params;
     t_in_params = NULL;
 }
+void DuplicateRemoval::Run(Pipe &inPipe, Pipe &outPipe, Schema &mySchema)
+{
+  t_in_params = new (tParams_t);
+  t_in_params->inPipe = &inPipe;
+  t_in_params->outPipe = &outPipe;
+  t_in_params->pSchema = &mySchema;
+  t_in_params->runlen = runlen;
+
+  if (runlen == -1)
+  {
+    cerr << "\nError! Use_n_Page() must be called and "
+      << "pages of memory allowed for operations must be set!\n";
+    exit(1);
+  }
+  pthread_create(&thread, NULL, DuplicateRemoval_Worker,
+      (void *)t_in_params);
+  // return;
+}
+
 
 void DuplicateRemoval::Use_n_Pages(int runlen)
 {
@@ -231,20 +232,7 @@ void DuplicateRemoval::WaitUntilDone()
 }
 //--------------- Sum ------------------
 
-void Sum::Run (Pipe &inPipe, Pipe &outPipe, Function &computeMe)
-{
-	 t_in_params = new (tParams_t);
-		 t_in_params->inPipe = &inPipe;
-		   t_in_params->outPipe = &outPipe;
-		   t_in_params->computeFunc = &computeMe;
-
-    pthread_create(&thread, NULL, &Sum_Worker,
-        (void*)t_in_params);
-
-    return;
-}
-
-void * Sum::Sum_Worker(void * vptr)
+void* Sum_Worker(void * vptr)
 {
 	 tParams_t *t_in_params = (tParams_t *) vptr;
     Record rec;
@@ -277,7 +265,25 @@ void * Sum::Sum_Worker(void * vptr)
     delete t_in_params;
     t_in_params = NULL;
 }
+void Sum::Run (Pipe &inPipe, Pipe &outPipe, Function &computeMe)
+{
+  t_in_params = new (tParams_t);
+  t_in_params->inPipe = &inPipe;
+  t_in_params->outPipe = &outPipe;
+  t_in_params->computeFunc = &computeMe;
+  t_in_params->runlen = runlen;
 
+  pthread_create(&thread, NULL, Sum_Worker,
+      (void*)t_in_params);
+
+  return;
+}
+
+
+void Sum::Use_n_Pages(int runlen)
+{
+	this->runlen = runlen;
+}
 void Sum::WaitUntilDone()
 {
     pthread_join(thread, 0);
@@ -289,29 +295,12 @@ void GroupBy::Use_n_Pages(int runlen)
 	this->runlen = runlen;
 }
 
-void GroupBy::Run(Pipe& inPipe, Pipe& outPipe, OrderMaker& groupAtts, Function& computeMe)
-{
-
-	 t_in_params = new (tParams_t);
-		 t_in_params->inPipe = &inPipe;
-		   t_in_params->outPipe = &outPipe;
-		   t_in_params->computeFunc = &computeMe;
-		   t_in_params->groupAttributesOM = &groupAtts;
-
-    pthread_create(&thread, NULL, GroupBy_Worker, (void*)t_in_params);
-}
-
-void GroupBy::WaitUntilDone()
-{
-    pthread_join(thread, 0);
-}
-
-void* GroupBy::GroupBy_Worker(void* vptr)
+void* GroupBy_Worker(void* vptr)
 {
 	tParams_t *t_in_params = (tParams_t *) vptr;
     const int pipeSize = 100;
     Pipe localOutPipe(pipeSize);
-    BigQ localBigQ(*(t_in_params->inPipe), localOutPipe, *(t_in_params->groupAttributesOM), this->runlen);
+    BigQ localBigQ(*(t_in_params->inPipe), localOutPipe, *(t_in_params->groupAttributesOM), t_in_params->runlen);
     Record rec;
     Record *currentGroupRecord = new Record();
     bool currGroupFlag = false;
@@ -400,4 +389,22 @@ void* GroupBy::GroupBy_Worker(void* vptr)
     delete t_in_params;
     t_in_params = NULL;
 }
+void GroupBy::Run(Pipe& inPipe, Pipe& outPipe, OrderMaker& groupAtts, Function& computeMe)
+{
+
+  t_in_params = new (tParams_t);
+  t_in_params->inPipe = &inPipe;
+  t_in_params->outPipe = &outPipe;
+  t_in_params->computeFunc = &computeMe;
+  t_in_params->groupAttributesOM = &groupAtts;
+  t_in_params->runlen = runlen;
+
+  pthread_create(&thread, NULL, GroupBy_Worker, (void*)t_in_params);
+}
+
+void GroupBy::WaitUntilDone()
+{
+    pthread_join(thread, 0);
+}
+
 
