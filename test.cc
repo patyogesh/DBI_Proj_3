@@ -115,6 +115,7 @@ void q2 () {
   cout <<" \n in "<<__FUNCTION__;
 
 	char *pred_p = "(p_retailprice > 931.01) AND (p_retailprice < 931.3)";
+	//char *pred_p = "(p_retailprice < 930.00)";
 	init_SF_p (pred_p, 100);
 
 	Project P_p;

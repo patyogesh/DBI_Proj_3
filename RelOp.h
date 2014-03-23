@@ -14,6 +14,10 @@ typedef struct Thread_aparams {
   Pipe    *outPipe;
   CNF     *cnf;
   Record  *lit;
+
+  int     *atts_to_keep;
+  int     num_atts_in;
+  int     num_atts_out;
 }tParams_t;
 
 class RelationalOp {
@@ -44,16 +48,22 @@ class SelectFile : public RelationalOp {
 };
 
 class SelectPipe : public RelationalOp {
-	public:
-	void Run (Pipe &inPipe, Pipe &outPipe, CNF &selOp, Record &literal) { }
-	void WaitUntilDone () { }
-	void Use_n_Pages (int n) { }
+	private:
+	pthread_t   thread;
+	
+  public:
+	void Run (Pipe &inPipe, Pipe &outPipe, CNF &selOp, Record &literal);
+	void WaitUntilDone ();
+	void Use_n_Pages (int n);
 };
 class Project : public RelationalOp { 
+	private:
+	pthread_t   thread;
+
 	public:
-	void Run (Pipe &inPipe, Pipe &outPipe, int *keepMe, int numAttsInput, int numAttsOutput) { }
-	void WaitUntilDone () { }
-	void Use_n_Pages (int n) { }
+	void Run (Pipe &inPipe, Pipe &outPipe, int *keepMe, int numAttsInput, int numAttsOutput);
+	void WaitUntilDone ();
+	void Use_n_Pages (int n);
 };
 class Join : public RelationalOp { 
 	public:
