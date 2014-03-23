@@ -283,124 +283,104 @@ void Sum::WaitUntilDone()
 
 void GroupBy::Use_n_Pages(int n)
 {
-    m_nRunLen = n;
+	this->runlen = runlen;
 }
 
 void GroupBy::Run(Pipe& inPipe, Pipe& outPipe, OrderMaker& groupAtts, Function& computeMe)
 {
-    pthread_create(&m_thread, NULL, DoOperation, (void*)new Params(&inPipe, &outPipe, &groupAtts, &computeMe, m_nRunLen));
+
+	 t_in_params = new (tParams_t);
+		 t_in_params->inPipe = &inPipe;
+		   t_in_params->outPipe = &outPipe;
+		   t_in_params->computeFunc = &computeMe;
+		   t_in_params->groupAttributesOM = &groupAtts;
+
+    pthread_create(&thread, NULL, GroupBy_Worker, (void*)t_in_params);
 }
 
 void GroupBy::WaitUntilDone()
 {
-    pthread_join(m_thread, 0);
+    pthread_join(thread, 0);
 }
 
-void* GroupBy::DoOperation(void* p)
+void* GroupBy::GroupBy_Worker(void* vptr)
 {
-    Params* param = (Params*)p;
-    //create a local outputPipe and a BigQ and an feed it with current inputPipe
+	tParams_t *t_in_params = (tParams_t *) vptr;
     const int pipeSize = 100;
     Pipe localOutPipe(pipeSize);
-    BigQ localBigQ(*(param->inputPipe), localOutPipe, *(param->groupAttributes), param->runLen);
+    BigQ localBigQ(*(t_in_params->inPipe), localOutPipe, *(t_in_params->groupAttributesOM), this->runlen);
     Record rec;
     Record *currentGroupRecord = new Record();
     bool currentGroupActive = false;
-    ComparisonEngine ce;
+    ComparisonEngine comp;
     double sum = 0.0;
-#ifdef _RELOP_DEBUG
-    bool printed = false;
-    int recordsInAGroup = 0;
-    ofstream log_file("log_file");
-    ofstream groupRecordLogFile("groupRecordLogFile");
-#endif
+
 
     while(localOutPipe.Remove(&rec) || currentGroupActive)
     {
-#ifdef _RELOP_DEBUG
-        Schema suppSchema("catalog", "supplier");
-        if(!printed)
-        {
-            cout<< "param->groupAttributes->numAtts" << param->groupAttributes->numAtts << endl;
-            for (int i = 0; i < param->groupAttributes->numAtts; i++)
-                cout<<"param->groupAttributes->whichAtts["<<i<<"] = "<<param->groupAttributes->whichAtts[i]<<endl;
-            cout<<"columns in Record = "<<((int*)rec.bits)[1]/sizeof(int) - 1<<endl;
-            printed = true;
-        }
-#endif
-
         if(!currentGroupActive)
         {
             currentGroupRecord->Copy(&rec);
             currentGroupActive = true;
-#ifdef _RELOP_DEBUG
-            rec.PrintToFile(&suppSchema, log_file);
-            currentGroupRecord->PrintToFile(&suppSchema, groupRecordLogFile);
-#endif
         }
 
         //either no new record fetched (end of pipe) or new group started so just go to else part and finish the last group
-        if(rec.bits != NULL && ce.Compare(currentGroupRecord, &rec, param->groupAttributes) == 0)
+        if(rec.bits != NULL && comp.Compare(currentGroupRecord, &rec, t_in_params->groupAttributesOM) == 0)
         {
             int ival = 0; double dval = 0;
-            param->computeMeFunction->Apply(rec, ival, dval);
+            t_in_params->computeFunc->Apply(rec, ival, dval);
             sum += (ival + dval);
             delete rec.bits;
             rec.bits = NULL;
-#ifdef _RELOP_DEBUG
-            recordsInAGroup++;
-#endif
         }
         else
         {
-#ifdef _RELOP_DEBUG
-            cout<<"Records in a Group = "<<recordsInAGroup<<", and sum = "<<sum<<endl;
-            //recordsInAGroup = 0;
-#endif
-            //store old sum and group-by attribtues concatenated in outputPipe
-            //and also start new group from here
-
-            // create temperory schema, with one attribute - sum
             Attribute att = {(char*)"sum", Double};
             Schema sum_schema((char*)"tmp_sum_schema_file", // filename, not used
                 1, // number of attributes
                 &att); // attribute pointer
 
+
+        	struct timeval tval;
+        		gettimeofday(&tval, NULL);
+        		stringstream ss;
+        		ss << tval.tv_sec;
+        		ss << ".";
+        		ss << tval.tv_usec;
+
+        		string filename = "partial" + ss.str();
+
+        	g_filePath = strdup(filename.c_str());
+
             // Make a file that contains this sum
-            string tempSumFileName = "tmp_sum_data_file" + System::getusec();
-            FILE * sum_file = fopen(tempSumFileName.c_str(), "w");
+            string tempSumFName = "temp_sum_data" + ss.str();
+            FILE * sum_file = fopen(tempSumFName.c_str(), "w");
             fprintf(sum_file, "%f|", sum);
             fclose(sum_file);
-            sum_file = fopen(tempSumFileName.c_str(), "r");
+            sum_file = fopen(tempSumFName.c_str(), "r");
             // Make record using the above schema and data file
             Record sumRec;
             sumRec.SuckNextRecord(&sum_schema, sum_file);
             fclose(sum_file);
 
-#ifdef _RELOP_DEBUG
-            //            cout<<"Sum Record : ";
-            //            sumRec.Print(&sum_schema);
-#endif
 
             //glue this record with the one we have from groupAttribute - not needed in q6
-            int numAttsToKeep = param->groupAttributes->numAtts + 1;
+            int numAttsToKeep = t_in_params->groupAttributesOM->numAtts + 1;
             int attsToKeep[numAttsToKeep];
             attsToKeep[0] = 0;  //for sumRec
             for(int i = 1; i < numAttsToKeep; i++)
             {
-                attsToKeep[i] = param->groupAttributes->whichAtts[i-1];
+                attsToKeep[i] = t_in_params->groupAttributesOM->whichAtts[i-1];
             }
             Record tuple;
             tuple.MergeRecords(&sumRec, currentGroupRecord, 1, numAttsToKeep - 1, attsToKeep,  numAttsToKeep, 1);
-            // Push this record to outPipe
 
-            param->outputPipe->Insert(&tuple);
+            t_in_params->outPipe->Insert(&tuple);
 
-            //initialize sum from last unused record (if any)
             if(rec.bits != NULL)
             {
                 int ival = 0; double dval = 0;
-                param->computeMeFunction->Apply(rec, ival, dval);
+                t_in_params->computeFunc->Apply(rec, ival, dval);
                 sum = (ival + dval);    //not += here coz we are re-initializing sum
                 delete rec.bits;
                 rec.bits = NULL;
@@ -409,23 +389,14 @@ void* GroupBy::DoOperation(void* p)
             //start new group for this record
             currentGroupActive = false;
             // delete file "tmp_sum_data_file"
-            if(remove(tempSumFileName.c_str()) != 0)
+            if(remove(tempSumFName.c_str()) != 0)
                 perror("\nError in removing tmp_sum_data_file!");
         }
     }
 
-#ifdef _RELOP_DEBUG
-    log_file.flush();
-    log_file.close();
-    groupRecordLogFile.flush();
-    groupRecordLogFile.close();
-    cout<<"sum in last group (after finish) = "<< sum<<endl;
-    cout<<"recs in last group (after finish) = "<< recordsInAGroup<<endl;
-#endif
-
     // Shut down the outpipe
-    param->outputPipe->ShutDown();
-    delete param;
-    param = NULL;
+    t_in_params->outPipe->ShutDown();
+    delete t_in_params;
+    t_in_params = NULL;
 }
 

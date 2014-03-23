@@ -17,6 +17,7 @@ typedef struct Thread_aparams {
   Schema *pSchema;
   Function *computeFunc;
 
+  OrderMaker *groupAttributesOM;
   int     *atts_to_keep;
   int     num_atts_in;
   int     num_atts_out;
@@ -95,6 +96,12 @@ private:
 	void Use_n_Pages (int n) { }
 };
 class GroupBy : public RelationalOp {
+private :
+private:
+	pthread_t   thread;
+
+	 static void* GroupBy_Worker(void*);
+
 	public:
 	void Run (Pipe &inPipe, Pipe &outPipe, OrderMaker &groupAtts, Function &computeMe) { }
 	void WaitUntilDone () { }
