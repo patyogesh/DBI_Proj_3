@@ -100,6 +100,10 @@ public:
         void GrowFromParseTree (struct AndList *parseTree, Schema *mySchema, 
 		Record &literal);
 
+        //returns common attributes of 2 OrderMakers in a 3rd OrderMaker
+                  //if no attributes match, it returns null
+        	int GetSortOrderAttsFromCNF (OrderMaker &cnf_order, OrderMaker &file_order);
+
 };
 
 #endif

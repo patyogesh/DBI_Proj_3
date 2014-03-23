@@ -614,3 +614,43 @@ void CNF :: GrowFromParseTree (struct AndList *parseTree, Schema *mySchema,
 }
 
 
+int CNF:: GetSortOrderAttsFromCNF (OrderMaker &cnf_order, OrderMaker &file_order) {
+
+    cnf_order.numAtts = 0;
+    file_order.numAtts = 0;
+
+    for (int i = 0; i < numAnds; i++)
+	{
+        if (orLens[i] != 1) {
+            continue;
+        }
+
+        if (orList[i][0].op != Equals) {
+            continue;
+        }
+
+        if (orList[i][0].operand1 == Left && orList[i][0].operand2 == Literal)
+        {
+            cnf_order.whichAtts[cnf_order.numAtts] = orList[i][0].whichAtt1;
+            cnf_order.whichTypes[cnf_order.numAtts] = orList[i][0].attType;
+            file_order.whichAtts[file_order.numAtts] = orList[i][0].whichAtt2;
+            file_order.whichTypes[file_order.numAtts] = orList[i][0].attType;
+        }
+
+        else if (orList[i][0].operand1 == Literal && orList[i][0].operand2 == Right)
+        {
+            cnf_order.whichAtts[cnf_order.numAtts] = orList[i][0].whichAtt2;
+            cnf_order.whichTypes[cnf_order.numAtts] = orList[i][0].attType;
+            file_order.whichAtts[file_order.numAtts] = orList[i][0].whichAtt1;
+            file_order.whichTypes[file_order.numAtts] = orList[i][0].attType;
+        }
+        else
+            continue;
+
+        cnf_order.numAtts++;
+        file_order.numAtts++;
+    }
+
+    return cnf_order.numAtts;
+
+}

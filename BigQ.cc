@@ -304,6 +304,7 @@ merge_pages(threadParams_t *inParams)
 void*
 bigQueue(void *vptr) {
 
+	  pageSortVect.clear();
 	pageIndexVect.clear();
 	 recSortVect.clear();
 
@@ -323,9 +324,7 @@ bigQueue(void *vptr) {
 int k=0;
 	while (record_present) {
 
-		while (numPages <= inParams->runLen) {
-  //cout <<"\n ********** in Second while ***********"<<count++;
- // cout <<"\n ********** in Second while ***********";
+		while (numPages < inParams->runLen) {
 			/*
 			 * Fetch record(s) from input pipe one by one
 			 * and add it to a page/runs
