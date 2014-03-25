@@ -14,6 +14,7 @@ SelectFile_Worker(void *vptr)
   while(t_in_params->dbFile->GetNext(temp,
                                *(t_in_params->cnf),
                                *(t_in_params->lit))) {
+    cout<<"\n Inserted" << ++ctr;
     t_in_params->outPipe->Insert(&temp);
   }
   t_in_params->outPipe->ShutDown();
@@ -197,10 +198,8 @@ void* DuplicateRemoval_Worker(void * vptr)
 
     localOutPipe.ShutDown();
     t_in_params->outPipe->ShutDown();
-
-    delete t_in_params;
-    t_in_params = NULL;
 }
+
 void DuplicateRemoval::Run(Pipe &inPipe, Pipe &outPipe, Schema &mySchema)
 {
   t_in_params = new (tParams_t);
@@ -228,43 +227,66 @@ void DuplicateRemoval::Use_n_Pages(int runlen)
 
 void DuplicateRemoval::WaitUntilDone()
 {
-    pthread_join(thread, 0);
+  pthread_join(thread, 0);
+
+  if(t_in_params) {
+    delete t_in_params;
+    t_in_params = NULL;
+  }
 }
 /* ========================Sum======================================= */
 
 void* Sum_Worker(void * vptr)
 {
-	 tParams_t *t_in_params = (tParams_t *) vptr;
-    Record rec;
-    double sum = 0;
+  tParams_t *t_in_params = (tParams_t *) vptr;
+  Record rec;
+  double iSum = 0;
+  double dSum = 0;
+  Type   ret_val;
+  int ival = 0; double dval = 0;
+  bool rec_found = 0;
 
-    while(t_in_params->inPipe->Remove(&rec))
-    {
-        int ival = 0; double dval = 0;
-        t_in_params->computeFunc->Apply(rec, ival, dval);
-        sum += (ival + dval);
+  while(t_in_params->inPipe->Remove(&rec))
+  {
+    ret_val = t_in_params->computeFunc->Apply(rec, ival, dval);
+    if(Int == ret_val)
+      iSum += ival;
+    else if(Double == ret_val)
+      dSum += dval;
+    else {
+      return NULL;
     }
+    rec_found = 1;
+  }
 
-    Attribute att = {(char*)"sum", Double};
+  if(rec_found) {
+    Record *compose_rec = new Record();
+    char compose_sum[4];
+    char compose_schema_name[8];
+    char compose_space[128];
 
-    Schema sum_schema((char*)"temp_sum_schema",1, &att);
+    sprintf(compose_sum, "sum\0");
+    sprintf(compose_schema_name, "temp_sum_schema\0");
 
-    FILE * sum_file = fopen("temp_sum_data", "w");
-    fprintf(sum_file, "%f|", sum);
-    fclose(sum_file);
-    sum_file = fopen("temp_sum_data", "r");
-    rec.SuckNextRecord(&sum_schema, sum_file);
-    fclose(sum_file);
+    Attribute att = {compose_sum, ret_val};
+    Schema sum_schema(compose_schema_name, 1, &att);
 
-    t_in_params->outPipe->Insert(&rec);
+    if(Int == ret_val)
+      sprintf(compose_space, "%d|\0", iSum);
+    else if(Double == ret_val)
+      sprintf(compose_space, "%f|\0", dSum);
 
-    t_in_params->outPipe->ShutDown();
+    compose_rec->ComposeRecord(&sum_schema, compose_space);
 
-    if(remove("temp_sum_data") != 0)
+    t_in_params->outPipe->Insert(compose_rec);
 
-    delete t_in_params;
-    t_in_params = NULL;
+    delete compose_rec;
+    compose_rec = NULL;
+  }
+
+  t_in_params->outPipe->ShutDown();
 }
+
 void Sum::Run (Pipe &inPipe, Pipe &outPipe, Function &computeMe)
 {
   t_in_params = new (tParams_t);
@@ -286,7 +308,12 @@ void Sum::Use_n_Pages(int runlen)
 }
 void Sum::WaitUntilDone()
 {
-    pthread_join(thread, 0);
+  pthread_join(thread, 0);
+
+  if(t_in_params) {
+    delete t_in_params;
+    t_in_params = NULL;
+  }
 }
 /* ========================GroupBy================================== */
 
@@ -386,8 +413,6 @@ void* GroupBy_Worker(void* vptr)
 
     // Shut down the outpipe
     t_in_params->outPipe->ShutDown();
-    delete t_in_params;
-    t_in_params = NULL;
 }
 void GroupBy::Run(Pipe& inPipe, Pipe& outPipe, OrderMaker& groupAtts, Function& computeMe)
 {
@@ -404,7 +429,12 @@ void GroupBy::Run(Pipe& inPipe, Pipe& outPipe, OrderMaker& groupAtts, Function& 
 
 void GroupBy::WaitUntilDone()
 {
-    pthread_join(thread, 0);
+  pthread_join(thread, 0);
+
+  if(t_in_params) {
+    delete t_in_params;
+    t_in_params = NULL;
+  }
 }
 
 
